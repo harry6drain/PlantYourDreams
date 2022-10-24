@@ -23,11 +23,12 @@ function Time() {
     else{
         greeting.innerText = greet3;
     }
+    greeting.style.fontSize = "50px";
 
     hour = update(hour);
     minute = update(minute);
     document.getElementById("currTime").innerText = hour + " : " + minute + " " + period;
-    
+    document.getElementById("currTime").style.fontSize = "100px"
 }
 
 function update(T) {

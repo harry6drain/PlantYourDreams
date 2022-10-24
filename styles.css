@@ -1,6 +1,7 @@
 /* Include the padding and border in an element's total width and height */
 * {
     box-sizing: border-box;
+    margin:0;
   }
   
   /* Remove margins and padding from the list */
@@ -91,7 +92,7 @@
     border-radius: 0;
     width: 75%;
     padding: 10px;
-    float: left;
+    /*float: left;*/
     font-size: 16px;
   }
   
@@ -114,26 +115,95 @@
   }
 
 /* ------------------------------------ */
-  .box-1{
+
+  .wrap{
+    width: 100%;
+    margin: auto;
+    background: #ddd;
     text-align: center;
-    vertical-align: middle;
+  }
+  .header{
+    height:150px;
+    background:#333;
+  }
+  .nav{
+    height:50px;
+    background:#000;
+  }
+  .container{
+    height:768px;
+    background:#3C4048;
+  }
+  /* .footer{
+    height:80px;
+  background:#ccc;
+  } */
+  .clear{
+    clear:both;    
+  }
+  /* .left{
+    width: 30%;
+    height: 845px;
+  float:left;
+  background:#333;
+  } */
+ 
+  .todo{
+    margin:auto;
+    width: 25%;
+    padding: 10px;
     position: absolute;
-    top: 40%;
-    left: 40%;
+    top: 50%;
+    left:75%;
+    /* transform: translate(-75%,-50%); */
+    background-color: white;
+  }
 
-}
-
-
-#greetingHeading{
+  #greetingHeading{
     /* margin:auto; */
-    font-size: 1in;
+    /* font-size: 1in; */
     font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     /* text-align: center; */
-}
-#currentTime{
-    
+  }
+  #currentTime{
     /* margin:auto; */
-    font-size: 2.2in;
+    /* font-size: 2.2in; */
     font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
     /* text-align: center; */
+  }
+  #planning{
+    font-size: 35px;
+    text-align: center;
+  }
+
+  #left {
+    float:left; 
+    background:#3C4048;
+    width:25%;
+    height:800px;
+
 }
+
+  #center{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    width:50%;
+  }
+
+  #right{
+    float:right;
+    background:#3C4048;
+    width:25%;
+    height: 800px;
+  }
+
+  #typebox{
+    margin: 0 auto;
+    display: block;
+    position: relative;
+    margin-top: 15px;
+  }
