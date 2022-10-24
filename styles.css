@@ -112,3 +112,28 @@
   .addBtn:hover {
     background-color: #bbb;
   }
+
+/* ------------------------------------ */
+  .box-1{
+    text-align: center;
+    vertical-align: middle;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+
+}
+
+
+#greetingHeading{
+    /* margin:auto; */
+    font-size: 1in;
+    font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* text-align: center; */
+}
+#currentTime{
+    
+    /* margin:auto; */
+    font-size: 2.2in;
+    font-family: -apple-system, BlinkMacSystemFont, "Neue Haas Grotesk Text Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* text-align: center; */
+}
