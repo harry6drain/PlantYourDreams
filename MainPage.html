@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>mainpage</title>
+      <link rel="stylesheet" href="MainPage.css">
+   </head>
+
+   <body>
+      <div style="text-align: center;">
+         <h1>Plant Your Dreams</h1>
+         </div>
+      
+      <div class="wrapper">
+
+         <div id="right">Start a plant
+            <br>
+            <a href="timer/index.html">clock</a>
+            <br>
+            <!-- partial:index.partial.html -->
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <div class="timer"></div>
+            <!-- partial -->
+            
+         </div>
+            
+         <div id="left">My todo-list
+            <br>
+            <a href="todo-list/Index.html">todo-list<a></a>
+            <br>
+            <h2 style="color: white;">My To Do List</h2>
+                <input type="text" id="myInput" placeholder="Title...">
+                <span onclick="newElement()" class="addBtn">Add</span>
+                <ul id="myUL">
+                    <li>Hit the gym</li>
+                    <li class="checked">Pay bills</li>
+                    <li>Meet George</li>
+                    <li>Buy eggs</li>
+                    <li>Read a book</li>
+                    <li>Organize office</li>
+           
+         </div>    
+      </div>
+      <div class="sub-div">
+         <a href="/">My garden</a>
+         <a href="/">Shop</a>
+         <a href="/">Friends</a>
+         <a href="/">Settings</a>
+         
+      </div>
+         
+
+   <script  src="timer/script.js"></script>
+   <script  src="todo-list/todo-list.js"></script>
+   </body>
+</html>
