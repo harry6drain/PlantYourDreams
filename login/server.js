@@ -1,34 +1,54 @@
+const dotenv = require('dotenv').config()
 const express = require("express");
 const UserModel = require("./models/User");
 // const expressLayouts = require("express-ejs-layouts");
 const bcrypt = require("bcrypt");
 const app = express();
 const passport = require("passport");
-const initializePassport = require("./passport-configure");
+const flash = require("express-flash");
+const session = require("express-session");
 
+const initializePassport = require("./passport-configure");
+initializePassport(passport, 
+  currUser => {  
+    return UserModel.exists({username: currUser});
+})
 let curUserName;
 let hashedPass;
 
-initializePassport(passport, 
-    function(username){
-        return username
-    }
-);
+
 const mongoose = require("mongoose");
 mongoose.connect("mongodb+srv://harry6drain:plantyourdreams@cluster0.9l6lwo5.mongodb.net/userDB");
 
 
 app.use(express.urlencoded({extended:false}));
+app.use(flash())
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave:false,
+  saveUninitialized:false
+
+}))
+app.use(passport.initialize());
+app.use(passport.session());  
+
+
 //EJS
 app.set("view engine","ejs");
 app.get("/",(req,res) => {
     res.render("index.ejs", {name: "Harry"});
 })
+
+
 //login route
 app.get("/login",(req,res)=>{
     res.render("login.ejs");
 })
-app.post("/login")
+app.post("/login",passport.authenticate('local',{
+  successRedirect: "/",
+  failureRedirect: '/login',
+  failureFlash: true
+}))
 
 //register route
 app.get("/register",(req,res)=>{
@@ -86,11 +106,6 @@ app.post("/register",async (req,res)=>{
 //   }
 // };
 
-
-
-function get(params) {
-    
-}
 
 
 // In webapp.mjs(for server.mjs) 
