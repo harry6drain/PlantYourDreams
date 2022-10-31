@@ -93,5 +93,17 @@ function get(params) {
 }
 
 
+// In webapp.mjs(for server.mjs) 
+// import * as auth from './auth.mjs'
+
+
+// export {
+//   startAuthenticatedSession,
+//   endAuthenticatedSession,
+//   register,
+//   login,
+//   authRequired
+// };
+
 app.listen(3000);
 
