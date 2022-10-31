@@ -3,28 +3,31 @@
 h1 {
     color: #999999;
     font-family: arial, sans-serif;
-    font-size: 16px;
+    font-size: 50px;
     font-weight: bold;
     margin-top: 0px;
     margin-bottom: 1px;
     }
-.wrapper{
-    height: 40%;
-    width: 100%;
 
+#buttonclock{
+    font-size:20px;
+}
+#buttonToDo{
+    font-size:20px;
 }
 #left {
+    display:none;
     float:left; 
     background:white;
-    width:50%;
+    width:100%;
     height:800px;
 
 }
 
 #right{
     float:right;
-    background:pink;
-    width:50%;
+    background:white;
+    width:100%;
     height: 800px;
   }
   /*style the timer*/
@@ -182,15 +185,18 @@ h1 {
   }
 
   .sub-div{
-    width:120%;
-    bottom:0px;
+    position: absolute;
+    display: inline;
+    bottom: 0px;
+    text-align: center;
   }
   .sub-div>a {
-    float: left;
-    display: inline-block;
-    width:25%;
+
+
+    font-size: 20px;
     padding: 0;
     margin: 0;
-    color: #fff;
-    background-color: #4C8331;
+    color:white;
+    background-color:#555;
+    
   }
