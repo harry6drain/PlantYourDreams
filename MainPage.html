@@ -5,17 +5,10 @@
       <link rel="stylesheet" href="MainPage.css">
    </head>
 
-   <body>
-      <div style="text-align: center;">
-         <h1>Plant Your Dreams</h1>
-         </div>
-      
- 
-         <button id="buttonclock"> Start Focus</button>
+   <body style="background-color: #5D6943";>
+  
+         <button id="buttonclock">Timer</button>
          <div id="right">
-            <br>
-       
-            <br>
             <!-- partial:index.partial.html -->
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
             <div class="timer"></div>
@@ -23,14 +16,14 @@
             
          </div>
 
-         <button id="buttonToDo"> My Tasks</button>
+         <button id="buttonToDo">My Tasks</button>
          <!-- <button id="buttonClock"> Clock</button> -->
          <div id="left">
             <br>
           
             <br>
-            <h2 style="color: white;">My To Do List</h2>
-                <input type="text" id="myInput" placeholder="Title...">
+            <h2 id ="todo">Todo List</h2>
+                <input type="text" id="myInput" placeholder="Enter a new task">
                 <span onclick="newElement()" class="addBtn">Add</span>
                 <ul id="myUL">
                     <li>Hit the gym</li>
@@ -42,13 +35,30 @@
            
          </div>    
 
-      <div class="sub-div">
-         <a href="/">My garden</a>
-         <a href="/">Shop</a>
-         <a href="/">Friends</a>
-         <a href="/">Settings</a>
-         
-      </div>
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+         <nav class="nav">
+           <a href="MainPage.html" class="nav__link">
+             <i class="material-icons nav__icon">dashboard</i>
+             <span class="nav__text">Home</span>
+           </a>
+           <a href="#" class="nav__link nav__link--active">
+             <i class="material-icons nav__icon">person</i>
+             <span class="nav__text">My Garden</span>
+           </a>
+           <a href="#" class="nav__link">
+             <i class="material-icons nav__icon">shopping_cart_checkout</i>
+             <span class="nav__text">Shop</span>
+           </a>
+           <a href="#" class="nav__link">
+             <i class="material-icons nav__icon">diversity_3</i>
+             <span class="nav__text">Friends</span>
+           </a>
+           <a href="#" class="nav__link">
+             <i class="material-icons nav__icon">settings</i>
+             <span class="nav__text">Settings</span>
+           </a>
+         </nav>
+  
          
    <script  src="Script.js"></script>
    <script  src="timer/script.js"></script>
