@@ -5,42 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main UI</title>
+ 
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class = "wrap">
         <div class="header"></div>
         <div class="nav"></div>
-        <div class="container">
-            <!-- <div class="left"></div> -->
-            <div id="left">
-
-            </div>
+        <div class="container"> 
             <div id="center">
-                <h1 id = "currTime" > </h1>
-                <h1 id = "greetHeading" > </h1>
-                <!-- <h1 id = "roasts"> </h1> -->
-                <br>
-                <h2 id = "planning"> What is your main focus for today?</h2>
-                <input type="text" id = "typebox" >
-            </div>
-            <div id="right">
                 <h2 style="color: white;">My To Do List</h2>
                 <input type="text" id="myInput" placeholder="Title...">
                 <span onclick="newElement()" class="addBtn">Add</span>
                 <ul id="myUL">
-                    <li>HW1</li>
-                    <li class="checked">HW2</li>
-                    <li>HW3</li>
-                    <li>HW4</li>
-                    <li>Midterm1</li>
-                    <li>Midterm2</li>
+                    <li>Hit the gym</li>
+                    <li class="checked">Pay bills</li>
+                    <li>Meet George</li>
+                    <li>Buy eggs</li>
+                    <li>Read a book</li>
+                    <li>Organize office</li>
                 </ul>
             </div>
             
         </div>
     </div>
-    <script src="Clock.js"> </script>
+    
     <script src="todo-list.js"></script>
+    
 </body>
 </html>
