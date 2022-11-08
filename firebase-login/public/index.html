@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+    
+    <form>
+        <div class="container">
+            <h1>Login</h1>
+            <p>Please fill in this form to login.</p>
+            <hr>
+    
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" id="loginEmail" required>
+    
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Password" name="psw" id="loginPsw" required>
+    
+            <hr>
+            <button type="button" id="loginbtn" name="loginbtn" class="registerbtn">Login</button>
+        </div>
+    
+        <div class="container signin">
+            <p>Don't have an account? <a href="./register.html">Sign up</a>.</p>
+        </div>
+    </form>
+
+    <script type="module">
+        import { initializeApp, } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+        import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+        import { getFirestore,collection,doc,setDoc } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAUS-fQ46Gv4kuLEqvYurwQJ5inCRkLA1U",
+            authDomain: "plantyourdreams-8d08e.firebaseapp.com",
+            databaseURL: "https://plantyourdreams-8d08e-default-rtdb.firebaseio.com",
+            projectId: "plantyourdreams-8d08e",
+            storageBucket: "plantyourdreams-8d08e.appspot.com",
+            messagingSenderId: "63192119407",
+            appId: "1:63192119407:web:c15c2b763e51e7f786b59a",
+            measurementId: "G-XYRQCEW5L5"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        loginbtn.addEventListener("click",(e) => {
+            var email = document.getElementById('loginEmail').value;
+            var password = document.getElementById('loginPsw').value;
+            signInWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Signed in
+                const user = userCredential.user;
+                alert(`User with uid ${user.uid} signs in successfully!`);
+                // ...
+
+                var lgDate = new Date();
+                const userRef = doc(db, 'users', user.uid);
+                const newData = {
+                    email: user.email,
+                    lastLogin: lgDate
+                }
+                setDoc(userRef, newData, { merge: true })
+                .then(userRef => {
+                    console.log("Last login timestamp updated!")
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                alert(errorMessage);
+            });
+        })
+    </script>
+</body>
+</html>
