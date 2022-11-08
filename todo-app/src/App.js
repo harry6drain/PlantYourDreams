@@ -68,14 +68,14 @@ function App() {
   return (
     <div className={style.bg}>
       <div className={style.container}>
-        <h3 className={style.heading}>Todo App</h3>
+        <h3 className={style.heading}>Plant Your Dreams - Tasks</h3>
         <form onSubmit={createTodo} className={style.form}>
           <input
             value={input}
             onChange={(e) => setInput(e.target.value)}
             className={style.input}
             type='text'
-            placeholder='Add Todo'
+            placeholder='What do you want to focus on'
           />
           <button className={style.button}>
             <AiOutlinePlus size={30} />
@@ -92,7 +92,7 @@ function App() {
           ))}
         </ul>
         {todos.length < 1 ? null : (
-          <p className={style.count}>{`You have ${todos.length} todos`}</p>
+          <p className={style.count}>{`You have ${todos.length} Tasks`}</p>
         )}
       </div>
     </div>
