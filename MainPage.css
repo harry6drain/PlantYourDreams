@@ -1,19 +1,137 @@
 
+#timer{
+    display:none;
+}
+
+#another{
+    display:none;
+    position: absolute;
+    width: 233px;
+    height: 64px;
+    left: 340px;
+    top: 500px;
+    border:none;
+    background: #5D6943;
+    border-radius: 40px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    align-items: center;
+    color: #FFFFFF;
+    }
+#start{
+    display:none;
+    position: absolute;
+    width: 233px;
+    height: 64px;
+    left: 340px;
+    top: 500px;
+    border:none;
+    background: #5D6943;
+    border-radius: 40px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+/*style the flower selection*/
+/*display several seeds*/
+.inline-block {
+    padding:10px;
+    margin:auto;
+    display: inline-block;
+ }
+
+/*style the select button*/
+#buttonselect{
+    justify-content: center;
+    position:absolute;
+    width: 233px;
+    height: 64px;
+    left: 300px;
+    top: 400px;
+    color:white;
+    font-size: 20px;
+    background: #5D6943;
+    border-radius: 40px;
+}
+/*style the text*/
+#select{
+    justify-content: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 61px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #5D6943;
+
+}
+/*style the selection page*/
+#selection{
+    text-align: center;
+    align-items: center;
+    display:none;
+    position: absolute;
+    width: 886px;
+    height: 592px;
+    left: 313px;
+    top: 168px;
+    background: #FFFFFF;
+    border-radius: 20px;
+}
+/*style the imported png*/
+#pot{
+    position: absolute;
+    width: 151.15px;
+    height:80px;
+    left: 370px;
+    top: 200px;
+}
+#seed{
+    display:none;
+    position: absolute;
+    width: 49px;
+    height: 70px;
+    left: 421px;
+    top: 165px;
+}
+#grown{
+    display:none;
+    position: absolute;
+    width: 140px;
+    height: 130px;
+    left: 377px;
+    top: 110px;
+}
+
 /*style the mainpage*/
+#msg{
+    color: #5D6943;
+    position: absolute;
+    height: 66px;
+    left: 300px;
+    top: 400px;
 
+}
 #todo{
-
-
-font-family: 'El Messiri';
-font-style: normal;
-font-weight: 700;
-font-size: 40px;
-line-height: 63px;
-
-align-items: center;
-text-align: center;
-
-color: #000000;
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 63px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
 
 }
 #buttonclock{
@@ -24,7 +142,7 @@ color: #000000;
     height: 49px;
     left: 612px;
     top: 80px;
-    background: #5D6943;
+    background: #FFFFFF;
     border-radius: 24px 0px 0px 24px;
     font-family: 'Inter';
     font-style: normal;
@@ -32,7 +150,7 @@ color: #000000;
     font-weight: 500;
     font-size: 20px;
     line-height: 24px;
-    color: #FFFFFF;
+    color: #5D6943;
    
 }
 #buttonToDo{
@@ -43,7 +161,7 @@ color: #000000;
     height: 49px;
     left: 756px;
     top: 80px;
-    background: #FFFFFF;
+    background: #5D6943;
     border-radius: 0px 24px 24px 0px;
     font-family: 'Inter';
     font-style: normal;
@@ -51,15 +169,16 @@ color: #000000;
     font-size: 20px;
     line-height: 24px;
     text-align: center;
-    color: #5D6943;
+    color: white;
+    
 }
 #left {
+    z-index:2;
     position: absolute;
     width: 886px;
     height: 592px;
     left: 313px;
     top: 168px;
-
     background: #FFFFFF;
     border-radius: 20px;
 
@@ -71,11 +190,11 @@ color: #000000;
     height: 592px;
     left: 313px;
     top: 168px;
-
     background: #FFFFFF;
     border-radius: 20px;
    
   }
+
   /*style the timer*/
   .timer {
     font-family: sans-serif;
@@ -87,33 +206,44 @@ color: #000000;
   }
   
   .timer__part {
-    font-size: 36px;
-    font-weight: bold;
-  }
-  
-  .timer__btn {
-    width: 50px;
-    height: 50px;
-    margin-left: 16px;
-    border-radius: 50%;
-    border: none;
-    color: white;
-    background: #8208e6;
-    cursor: pointer;
-  }
-  
-  .timer__btn--start {
-    background: #00b84c;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    color: #5D6943;
     
   }
+  .timer__btn--control{
+    background: red;
+  }
+  .timer__btn--reset{
+    background:red;
+  }
+
+  .timer__btn--start {
+    box-sizing: border-box;
+    position: absolute;
+    justify-content: center;
+    width: 233px;
+    height: 64px;
+    left: 350px;
+    top: 500px; 
+    background: #5D6943;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+
+  }
+  
+ 
   
   .timer__btn--stop {
-    background: #ff0256;
+    background: green;
   }
   ul {
     margin: 0;
     padding: 0;
   }
+
   /* Include the padding and border in an element's total width and height */
 * {
     box-sizing: border-box;
