@@ -173,6 +173,7 @@
     
 }
 #left {
+  display: none;
     z-index:2;
     position: absolute;
     width: 886px;
@@ -185,6 +186,7 @@
 }
 
 #right{
+  display: block;
     position: absolute;
     width: 886px;
     height: 592px;

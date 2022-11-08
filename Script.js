@@ -18,13 +18,15 @@ let btnanother=document.getElementById("another");
 let grown=document.getElementById("grown");
 
 btnanother.addEventListener("click",()=>{
-    grown.style.disply="none"
-    seedshow.style.display="none"
-    msg.innerHTML="Click pot to choose seed first"
-    timer.style.display="none"
-    btnanother.style.display="none"
+    // grown.style.disply="none"
     // seedshow.style.display="none"
-    grown.style.display="none"
+    // msg.innerHTML="Click pot to choose seed first"
+    // timer.style.display="none"
+    // btnanother.style.display="none"
+    // // seedshow.style.display="none"
+    // grown.style.display="none"
+    window.location.href="MainPage.html";
+
 
 })
 btnclock.addEventListener("click",()=>{
