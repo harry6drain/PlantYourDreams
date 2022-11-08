@@ -13,9 +13,9 @@ import {
 } from 'firebase/firestore';
 
 const style = {
-  bg: `h-screen w-screen p-4 bg-gradient-to-r from-[#0b2823] to-[#21695b]`,
-  container: `bg-slate-100 max-w-[500px] w-full m-auto rounded-md shadow-xl p-4`,
-  heading: `text-3xl font-bold text-center text-gray-800 p-2`,
+  bg: `flex items-center h-screen w-screen p-4 bg-gradient-to-r from-[#7c8b5c] to-[#4d5736]`,
+  container: `bg-slate-100 max-w-[600px] w-full m-auto  rounded-md  shadow-xl p-4`,
+  heading: `text-4xl font-bold text-center text-gray-800 p-2`,
   form: `flex justify-between`,
   input: `border p-2 w-full text-xl`,
   button: `border p-4 ml-2 bg-slate-400 text-slate-100`,
