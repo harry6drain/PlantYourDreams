@@ -13,12 +13,12 @@ import {
 } from 'firebase/firestore';
 
 const style = {
-  bg: `flex items-center h-screen w-screen p-4 bg-gradient-to-r from-[#7c8b5c] to-[#4d5736]`,
-  container: `bg-slate-100 max-w-[600px] w-full m-auto  rounded-md  shadow-xl p-4`,
-  heading: `text-4xl font-bold text-center text-gray-800 p-2`,
-  form: `flex justify-between`,
-  input: `border p-2 w-full text-xl`,
-  button: `border p-4 ml-2 bg-slate-400 text-slate-100`,
+  bg: `flex items-center h-screen w-screen p-4 bg-gradient-to-r from-[#4D5736] to-[#7C8B5C]`,
+  container: `bg-slate-100 max-w-[600px] w-full m-auto  rounded-md  shadow-xl p-4 leading-snug`,
+  heading: `text-4xl font-bold text-center text-zinc-600 p-2`,
+  form: `flex justify-between h-10`,
+  input: `border p-2 w-full text-lg`,
+  button: `flex border p-4 ml-2 bg-[#7C8B5C] text-slate-100 rounded-full items-center`,
   count: `text-center p-2`,
 };
 
@@ -27,6 +27,7 @@ function App() {
   const [input, setInput] = useState('');
 
   // Create todo
+    //need to write uid as well
   const createTodo = async (e) => {
     e.preventDefault(e);
     if (input === '') {
@@ -41,6 +42,7 @@ function App() {
   };
 
   // Read todo from firebase
+    //need to add uid filter
   useEffect(() => {
     const q = query(collection(db, 'todos'));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -68,7 +70,7 @@ function App() {
   return (
     <div className={style.bg}>
       <div className={style.container}>
-        <h3 className={style.heading}>Plant Your Dreams - Tasks</h3>
+        <h3 className={style.heading}>Your Tasks</h3>
         <form onSubmit={createTodo} className={style.form}>
           <input
             value={input}
