@@ -1,36 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="/style.css">
+  <head>
+    <title>Login</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="login">
+      <h2>Login</h2>
+      <h3>Welcome back!</h3>
 
-</head>
-<body>
-    
-    <form>
-        <div class="container">
-            <h1>Login</h1>
-            <p>Please fill in this form to login.</p>
-            <hr>
-    
-            <label for="email"><b>Email</b></label>
-            <input type="text" autocomplete="off" placeholder="Enter Email" name="email" id="loginEmail" required>
-    
-            <label><b>Password</b></label>
-            <input type="password" placeholder="Password" name="psw" id="loginPsw" required>
-    
-            <hr>
-            <button type="button" id="loginbtn" name="loginbtn" class="registerbtn">Login</button>
+      <form class="login-form">
+        <div class="textbox">
+          <input type="email" placeholder="Email" id="loginEmail"/>
+          <span class="material-symbols-outlined"> account_circle </span>
         </div>
-    
-        <div class="container signin">
-            <p>Don't have an account? <a href="./register.html">Sign up</a>.</p>
+        <div class="textbox">
+          <input type="password" placeholder="Password" id="loginPsw"/>
+          <span class="material-symbols-outlined"> lock </span>
         </div>
-    </form>
+        <button type="button" id="loginBtn" name="loginBtn">LOGIN</button>
+        <a href="./register.html">Don't have an account?</a>
+      </form>
+    </div>
 
     <script type="module" src="./login.js"></script>
-</body>
+  </body>
 </html>

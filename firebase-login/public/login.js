@@ -2,7 +2,8 @@ import { auth,db} from "./firebase.js"
 import { doc,setDoc} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js"
 import { signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js"
 
-loginbtn.addEventListener("click",(e) => {
+loginBtn.addEventListener("click",(e) => {
+    // e.preventDefault();
     var email = document.getElementById('loginEmail').value;
     var password = document.getElementById('loginPsw').value;
     signInWithEmailAndPassword(auth, email, password)
@@ -21,10 +22,13 @@ loginbtn.addEventListener("click",(e) => {
         setDoc(userRef, newData, { merge: true })
         .then(userRef => {
             console.log("Last login timestamp updated!")
+            //redirect to main page when successfully logged in
+            // window.location.assign("./testing.html")
         })
         .catch(error => {
             console.log(error);
         });
+
     })
     .catch((error) => {
         const errorCode = error.code;
@@ -32,3 +36,4 @@ loginbtn.addEventListener("click",(e) => {
         alert(errorMessage);
     });
 })
+
