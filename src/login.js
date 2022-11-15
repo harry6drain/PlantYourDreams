@@ -7,7 +7,7 @@ loginBtn.addEventListener("click",(e) => {
     var email = document.getElementById('loginEmail').value;
     var password = document.getElementById('loginPsw').value;
     signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
+    .then(async (userCredential) => {
         // Signed in
         const user = userCredential.user;
         alert(`User with uid ${user.uid} signs in successfully!`);
@@ -16,14 +16,13 @@ loginBtn.addEventListener("click",(e) => {
         var lgDate = new Date();
         const userRef = doc(db, 'users', user.uid);
         const newData = {
-            email: user.email,
             lastLogin: lgDate
         }
-        setDoc(userRef, newData, { merge: true })
+        await setDoc(userRef, newData, { merge: true })
         .then(userRef => {
             console.log("Last login timestamp updated!")
             //redirect to main page when successfully logged in
-            // window.location.assign("./testing.html")
+            window.location.replace("../MainPage.html");
         })
         .catch(error => {
             console.log(error);
