@@ -1,10 +1,11 @@
 {
   "name": "plantyourdreams",
   "version": "1.0.0",
-  "description": "Task focus app with Todo, Countdown features",
-  "main": "Script.js",
+  "description": "480-071 Final Project",
+  "main": "login.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
