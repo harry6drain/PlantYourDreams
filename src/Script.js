@@ -16,15 +16,16 @@ let msg=document.getElementById("msg");
 let btnstart=document.getElementById("start");
 let btnanother=document.getElementById("another");
 let grown=document.getElementById("grown");
+let selection;
 
+// import{promptMe} from "./timerscript.js"
+
+// btnstart.addEventListener("click",()=>{
+//     promptMe();
+
+// })
 btnanother.addEventListener("click",()=>{
-    // grown.style.disply="none"
-    // seedshow.style.display="none"
-    // msg.innerHTML="Click pot to choose seed first"
-    // timer.style.display="none"
-    // btnanother.style.display="none"
-    // // seedshow.style.display="none"
-    // grown.style.display="none"
+
     window.location.href="MainPage.html";
 
 
@@ -65,6 +66,7 @@ tulip_select.addEventListener("click",()=>{
     three_select.style.border=""
     cactus_select.style.border=""
     cotton_select.style.border=""
+    selection="tulip"
 })
 
 dand_select.addEventListener("click",()=>{
@@ -73,6 +75,7 @@ dand_select.addEventListener("click",()=>{
     three_select.style.border=""
     cactus_select.style.border=""
     cotton_select.style.border=""
+    selection="dandelion"
 })
 three_select.addEventListener("click",()=>{
     three_select.style.border="3px solid #5D6943"
@@ -80,6 +83,7 @@ three_select.addEventListener("click",()=>{
     tulip_select.style.border=""
     cactus_select.style.border=""
     cotton_select.style.border=""
+    selection="three leaf"
 })
 
 cactus_select.addEventListener("click",()=>{
@@ -88,6 +92,7 @@ cactus_select.addEventListener("click",()=>{
     three_select.style.border=""
     tulip_select.style.border=""
     cotton_select.style.border=""
+    selection="cactus"
 })
 cotton_select.addEventListener("click",()=>{
     cotton_select.style.border="3px solid #5D6943"
@@ -95,6 +100,7 @@ cotton_select.addEventListener("click",()=>{
     three_select.style.border=""
     cactus_select.style.border=""
     tulip_select.style.border=""
+    selection="cotton"
 })
 
 btnSelect.addEventListener("click",()=>{
@@ -103,21 +109,7 @@ btnSelect.addEventListener("click",()=>{
     seedshow.style.display="block";
     msg.innerHTML="Successfully Chose the Seed "
     btnstart.style.display="block";
+
     //timer.style.display="block";
 })
-// btn_timer_start.addEventListener("click",()=>{
-//     msg.innerHTML="Your plant is growing... "
-// })
-
-// function mark(ID) { //creates border
-//     var childImages = document.getElementById("thumbnails").children;
-//     var i;
-
-//     // clear any other borders that might be set
-//     for ( i = 0; i < childImages.length; i++ ) {
-//        childImages[i].style.border = '';
-//     }
-
-//     // Then set the one that got clicked.
-//     document.getElementById(ID).style.border="2px solid orange";
-// }
+export {selection};
