@@ -1,0 +1,38 @@
+{
+  "name": "plantyourdreams",
+  "version": "1.0.0",
+  "description": "Task focus app with Todo, Countdown features",
+  "main": "Script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zl2877/PlantYourDreams.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zl2877/PlantYourDreams/issues"
+  },
+  "homepage": "https://github.com/zl2877/PlantYourDreams#readme",
+  "dependencies": {
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.12",
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.3",
+    "firebase": "^9.13.0",
+    "framer-motion": "^4.1.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^2.1.3",
+    "validator": "^13.5.2",
+    "web-vitals": "^1.1.1"
+  }
+}
