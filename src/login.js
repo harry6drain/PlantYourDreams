@@ -22,7 +22,7 @@ loginBtn.addEventListener("click",(e) => {
         .then(userRef => {
             console.log("Last login timestamp updated!")
             //redirect to main page when successfully logged in
-            window.location.replace("../MainPage.html");
+            window.location.replace("./MainPage.html");
         })
         .catch(error => {
             console.log(error);

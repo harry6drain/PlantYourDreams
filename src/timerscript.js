@@ -1,9 +1,10 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+import { auth,db } from "./firebase.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js"
 // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import{ getFirestore , doc,updateDoc,arrayUnion} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import{ doc,setDoc,getDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 import {selection} from "./Script.js";
 
 let btns=document.getElementById("start");
@@ -15,28 +16,49 @@ const timeH = document.querySelector("h1");
 var time;
 var input;
 
+let User;
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    User = auth.currentUser;
+    const uid = User.uid;
+    alert(`Timer Lol`)
+    console.log(uid);
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    alert(`Time Uh-oh`)
+    window.location.assign("./index.html")
+  }
+});
 
 
-
-const firebaseConfig = {
-  apiKey: "AIzaSyAUS-fQ46Gv4kuLEqvYurwQJ5inCRkLA1U",
-  authDomain: "plantyourdreams-8d08e.firebaseapp.com",
-  databaseURL: "https://plantyourdreams-8d08e-default-rtdb.firebaseio.com",
-  projectId: "plantyourdreams-8d08e",
-  storageBucket: "plantyourdreams-8d08e.appspot.com",
-  messagingSenderId: "63192119407",
-  appId: "1:63192119407:web:c15c2b763e51e7f786b59a",
-  measurementId: "G-XYRQCEW5L5"
-};
-const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
-const db=getFirestore(app);
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAUS-fQ46Gv4kuLEqvYurwQJ5inCRkLA1U",
+//   authDomain: "plantyourdreams-8d08e.firebaseapp.com",
+//   databaseURL: "https://plantyourdreams-8d08e-default-rtdb.firebaseio.com",
+//   projectId: "plantyourdreams-8d08e",
+//   storageBucket: "plantyourdreams-8d08e.appspot.com",
+//   messagingSenderId: "63192119407",
+//   appId: "1:63192119407:web:c15c2b763e51e7f786b59a",
+//   measurementId: "G-XYRQCEW5L5"
+// };
+// const app = initializeApp(firebaseConfig);
+// // const analytics = getAnalytics(app);
+// const db=getFirestore(app);
 
 
 btns.addEventListener("click",()=>{
-  promptMe();
+    if (User){
+      promptMe();
+    }
+    
+  }
+)
 
-})
+
 
 function promptMe() {
   input= prompt("Enter the minutes you want to stay focused: ");
@@ -70,12 +92,27 @@ function promptMe() {
     btnanother.style.display="block"
     seedshow.style.display="none"
     grown.style.display="block"
-    // AddDocument_AutoID();
-    // Addseed();
-    await updateDoc(doc(db, "seed", 'gDKUpNOyYlsBln1boz0T'), {
-      planted: arrayUnion(selection)
-    });
-    
+
+    console.log(`User uid is ${User.uid}`)
+
+    const docRef = doc(db,"seed",User.uid);
+    const docSnap = getDoc(docRef);
+
+    //TODO: Needs debugging!
+    //Users have planted before
+    if (docSnap.exists()){
+      const plants = docSnap.data()
+      plants.push(selection);
+      setDoc(docRef, {
+        planted:plants
+      });
+    }
+    //User have not planted before
+    else{
+      setDoc(docRef,{
+        planted:[selection]
+      })
+    }
   }
 
 //   async function AddDocument_AutoID(){
