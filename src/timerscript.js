@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+import { auth,db } from "./firebase.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js"
 // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-analytics.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -16,6 +17,23 @@ const timeH = document.querySelector("h1");
 var time;
 var input;
 
+let User;
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    User = auth.currentUser;
+    const uid = User.uid;
+    alert(`Timer Lol`)
+    console.log(uid);
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    alert(`Time Uh-oh`)
+    window.location.assign("./index.html")
+  }
+});
 
 
 
@@ -34,29 +52,34 @@ const app = initializeApp(firebaseConfig);
 const db=getFirestore(app);
 const auth = getAuth(app);
 
-let User;
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/firebase.User
-    User = auth.currentUser;
-    const uid = User.uid;
-    console.log(uid);
-    // ...
-  } else {
-    // User is signed out
-    // ...
-    User = null;
-    console.log("Uh-oh");
-    window.location.replace("./index.html")
-  }
-});
+// let User;
+// onAuthStateChanged(auth, (user) => {
+//   if (user) {
+//     // User is signed in, see docs for a list of available properties
+//     // https://firebase.google.com/docs/reference/js/firebase.User
+//     User = auth.currentUser;
+//     const uid = User.uid;
+//     console.log(uid);
+//     // ...
+//   } else {
+//     // User is signed out
+//     // ...
+//     User = null;
+//     console.log("Uh-oh");
+//     window.location.replace("./index.html")
+//   }
+// });
 
 
 btns.addEventListener("click",()=>{
-  promptMe();
+    if (User){
+      promptMe();
+    }
+    
+  }
+)
 
-})
+
 
 function promptMe() {
   input= prompt("Enter the minutes you want to stay focused: ");
@@ -90,6 +113,7 @@ function promptMe() {
     btnanother.style.display="block"
     seedshow.style.display="none"
     grown.style.display="block"
+<<<<<<< HEAD
     // AddDocument_AutoID();
     // Addseed();
     const docRef = doc(db,"seed",User.uid);
@@ -108,6 +132,29 @@ function promptMe() {
     }
     
     
+=======
+
+    console.log(`User uid is ${User.uid}`)
+
+    const docRef = doc(db,"seed",User.uid);
+    const docSnap = getDoc(docRef);
+
+    //TODO: Needs debugging!
+    //Users have planted before
+    if (docSnap.exists()){
+      const plants = docSnap.data()
+      plants.push(selection);
+      setDoc(docRef, {
+        planted:plants
+      });
+    }
+    //User have not planted before
+    else{
+      setDoc(docRef,{
+        planted:[selection]
+      })
+    }
+>>>>>>> e694962cd22f5820a75f33e2e3966fa2741a8cab
   }
 
 //   async function AddDocument_AutoID(){

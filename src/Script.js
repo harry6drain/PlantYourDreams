@@ -27,6 +27,7 @@ let selection;
 //     promptMe();
 
 // })
+<<<<<<< HEAD
 
 let User;
 onAuthStateChanged(auth, (user) => {
@@ -49,9 +50,33 @@ onAuthStateChanged(auth, (user) => {
 btnanother.addEventListener("click",()=>{
     if (User)
         window.location.href="MainPage.html";
+=======
+let User;
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      User = auth.currentUser;
+      const uid = User.uid;
+      console.log("LOL");
+      // ...
+    } else {
+      // User is signed out
+      // ...
+      User = null;
+      console.log("LOL");
+      window.location.replace("./index.html")
+    }
+  });
 
+btnanother.addEventListener("click",()=>{
+    if (User)
+        window.location.href="MainPage.html";
 
 })
+>>>>>>> e694962cd22f5820a75f33e2e3966fa2741a8cab
+
+
 btnclock.addEventListener("click",()=>{
     if (User){
         btnclock.style.backgroundColor = '#5D6943';
@@ -85,12 +110,20 @@ btnToDo.addEventListener("click",()=>{
 })
 
 seedselect.addEventListener("click",()=>{
+<<<<<<< HEAD
     if (User)
         divselect.style.display="block";
+=======
+    if (User){
+        divselect.style.display="block";
+    }
+    
+>>>>>>> e694962cd22f5820a75f33e2e3966fa2741a8cab
 })
 
 tulip_select.addEventListener("click",()=>{
     if (User){
+<<<<<<< HEAD
         tulip_select.style.border="3px solid #5D6943"
         dand_select.style.border=""
         three_select.style.border=""
@@ -99,10 +132,20 @@ tulip_select.addEventListener("click",()=>{
         selection="tulip"
     }
     
+=======
+    tulip_select.style.border="3px solid #5D6943"
+    dand_select.style.border=""
+    three_select.style.border=""
+    cactus_select.style.border=""
+    cotton_select.style.border=""
+    selection="tulip"
+    }
+>>>>>>> e694962cd22f5820a75f33e2e3966fa2741a8cab
 })
 
 dand_select.addEventListener("click",()=>{
     if (User){
+<<<<<<< HEAD
         dand_select.style.border="3px solid #5D6943"
         tulip_select.style.border=""
         three_select.style.border=""
@@ -111,7 +154,17 @@ dand_select.addEventListener("click",()=>{
         selection="dandelion"
     }
     
+=======
+    dand_select.style.border="3px solid #5D6943"
+    tulip_select.style.border=""
+    three_select.style.border=""
+    cactus_select.style.border=""
+    cotton_select.style.border=""
+    selection="dandelion"
+    }
+>>>>>>> e694962cd22f5820a75f33e2e3966fa2741a8cab
 })
+
 three_select.addEventListener("click",()=>{
     if (User){
         three_select.style.border="3px solid #5D6943"
@@ -155,7 +208,10 @@ btnSelect.addEventListener("click",()=>{
         msg.innerHTML="Successfully Chose the Seed "
         btnstart.style.display="block";
     }
+<<<<<<< HEAD
     
+=======
+>>>>>>> e694962cd22f5820a75f33e2e3966fa2741a8cab
 
     //timer.style.display="block";
 })
