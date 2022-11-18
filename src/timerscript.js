@@ -113,7 +113,6 @@ function promptMe() {
     btnanother.style.display="block"
     seedshow.style.display="none"
     grown.style.display="block"
-<<<<<<< HEAD
     // AddDocument_AutoID();
     // Addseed();
     const docRef = doc(db,"seed",User.uid);
@@ -132,29 +131,6 @@ function promptMe() {
     }
     
     
-=======
-
-    console.log(`User uid is ${User.uid}`)
-
-    const docRef = doc(db,"seed",User.uid);
-    const docSnap = getDoc(docRef);
-
-    //TODO: Needs debugging!
-    //Users have planted before
-    if (docSnap.exists()){
-      const plants = docSnap.data()
-      plants.push(selection);
-      setDoc(docRef, {
-        planted:plants
-      });
-    }
-    //User have not planted before
-    else{
-      setDoc(docRef,{
-        planted:[selection]
-      })
-    }
->>>>>>> e694962cd22f5820a75f33e2e3966fa2741a8cab
   }
 
 //   async function AddDocument_AutoID(){
