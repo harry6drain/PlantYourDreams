@@ -21,6 +21,7 @@ let btnanother=document.getElementById("another");
 let grown=document.getElementById("grown");
 let selection;
 
+btnSelect.disabled=true;
 // import{promptMe} from "./timerscript.js"
 
 // btnstart.addEventListener("click",()=>{
@@ -97,6 +98,7 @@ tulip_select.addEventListener("click",()=>{
         cactus_select.style.border=""
         cotton_select.style.border=""
         selection="tulip"
+        btnSelect.disabled=false;
     }
     
 })
@@ -109,6 +111,7 @@ dand_select.addEventListener("click",()=>{
         cactus_select.style.border=""
         cotton_select.style.border=""
         selection="dandelion"
+        btnSelect.disabled=false;
     }
     
 })
@@ -121,6 +124,7 @@ three_select.addEventListener("click",()=>{
         cactus_select.style.border=""
         cotton_select.style.border=""
         selection="three leaf"
+        btnSelect.disabled=false;
     }
     
 })
@@ -133,6 +137,7 @@ cactus_select.addEventListener("click",()=>{
         tulip_select.style.border=""
         cotton_select.style.border=""
         selection="cactus"
+        btnSelect.disabled=false;
     }
     
 })
@@ -144,6 +149,7 @@ cotton_select.addEventListener("click",()=>{
         cactus_select.style.border=""
         tulip_select.style.border=""
         selection="cotton"
+        btnSelect.disabled=false;
     }
     
 })
