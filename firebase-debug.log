@@ -1,0 +1,33 @@
+[debug] [2022-11-21T19:19:28.708Z] ----------------------------------------------------------------------
+[debug] [2022-11-21T19:19:28.709Z] Command:       /opt/homebrew/Cellar/node/18.11.0/bin/node /opt/homebrew/bin/firebase serve
+[debug] [2022-11-21T19:19:28.709Z] CLI Version:   11.16.0
+[debug] [2022-11-21T19:19:28.709Z] Platform:      darwin
+[debug] [2022-11-21T19:19:28.709Z] Node Version:  v18.11.0
+[debug] [2022-11-21T19:19:28.710Z] Time:          Mon Nov 21 2022 14:19:28 GMT-0500 (Eastern Standard Time)
+[debug] [2022-11-21T19:19:28.711Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-21T19:19:28.756Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-21T19:19:28.756Z] > authorizing via signed-in user (tz1308@nyu.edu)
+[debug] [2022-11-21T19:19:28.756Z] [iam] checking project plantyourdreams-8d08e for permissions ["firebase.projects.get"]
+[debug] [2022-11-21T19:19:28.757Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/plantyourdreams-8d08e:testIamPermissions [none]
+[debug] [2022-11-21T19:19:28.757Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/plantyourdreams-8d08e:testIamPermissions x-goog-quota-user=projects/plantyourdreams-8d08e
+[debug] [2022-11-21T19:19:28.758Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/plantyourdreams-8d08e:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-11-21T19:19:28.937Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/plantyourdreams-8d08e:testIamPermissions 200
+[debug] [2022-11-21T19:19:28.937Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/plantyourdreams-8d08e:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2022-11-21T19:19:28.938Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/plantyourdreams-8d08e [none]
+[debug] [2022-11-21T19:19:29.128Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/plantyourdreams-8d08e 200
+[debug] [2022-11-21T19:19:29.128Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/plantyourdreams-8d08e {"projectId":"plantyourdreams-8d08e","projectNumber":"63192119407","displayName":"PlantYourDreams","name":"projects/plantyourdreams-8d08e","resources":{"hostingSite":"plantyourdreams-8d08e","realtimeDatabaseInstance":"plantyourdreams-8d08e-default-rtdb","storageBucket":"plantyourdreams-8d08e.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_bd3b8f67-ad5d-4795-9148-336f5a697fba"}
+[info] 
+[info] === Serving from '/Users/robinzhang/Desktop/Fall2022/CS480-071/finalProject/1/PlantYourDreams'...
+[info] 
+[debug] [2022-11-21T19:19:29.131Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/plantyourdreams-8d08e/sites 
+[debug] [2022-11-21T19:19:29.526Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/plantyourdreams-8d08e/sites 200
+[debug] [2022-11-21T19:19:29.526Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/plantyourdreams-8d08e/sites {"sites":[{"name":"projects/plantyourdreams-8d08e/sites/plantyourdreams-8d08e","defaultUrl":"https://plantyourdreams-8d08e.web.app","appId":"1:63192119407:web:c15c2b763e51e7f786b59a","type":"DEFAULT_SITE"}]}
+[debug] [2022-11-21T19:19:29.526Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/plantyourdreams-8d08e/webApps/1:63192119407:web:c15c2b763e51e7f786b59a/config [none]
+[debug] [2022-11-21T19:19:29.991Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/plantyourdreams-8d08e/webApps/1:63192119407:web:c15c2b763e51e7f786b59a/config 200
+[debug] [2022-11-21T19:19:29.991Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/plantyourdreams-8d08e/webApps/1:63192119407:web:c15c2b763e51e7f786b59a/config {"projectId":"plantyourdreams-8d08e","appId":"1:63192119407:web:c15c2b763e51e7f786b59a","databaseURL":"https://plantyourdreams-8d08e-default-rtdb.firebaseio.com","storageBucket":"plantyourdreams-8d08e.appspot.com","locationId":"us-central","apiKey":"AIzaSyAUS-fQ46Gv4kuLEqvYurwQJ5inCRkLA1U","authDomain":"plantyourdreams-8d08e.firebaseapp.com","messagingSenderId":"63192119407","measurementId":"G-XYRQCEW5L5"}
+[debug] [2022-11-21T19:19:29.997Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/plantyourdreams-8d08e [none]
+[debug] [2022-11-21T19:19:30.171Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/plantyourdreams-8d08e 200
+[debug] [2022-11-21T19:19:30.171Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/plantyourdreams-8d08e {"projectId":"plantyourdreams-8d08e","projectNumber":"63192119407","displayName":"PlantYourDreams","name":"projects/plantyourdreams-8d08e","resources":{"hostingSite":"plantyourdreams-8d08e","realtimeDatabaseInstance":"plantyourdreams-8d08e-default-rtdb","storageBucket":"plantyourdreams-8d08e.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_bd3b8f67-ad5d-4795-9148-336f5a697fba"}
+[info] i  hosting[plantyourdreams-8d08e]: Serving hosting files from: public {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1mpublic\u001b[22m"}}
+[info] ✔  hosting[plantyourdreams-8d08e]: Local server: http://localhost:5002 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://localhost:5002\u001b[22m\u001b[24m"}}
