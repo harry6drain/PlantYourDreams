@@ -1,0 +1,406 @@
+
+#timer{
+    display:none;
+}
+
+#another{
+    display:none;
+    position: absolute;
+    width: 233px;
+    height: 64px;
+    left: 340px;
+    top: 500px;
+    border:none;
+    background: #5D6943;
+    border-radius: 40px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    align-items: center;
+    color: #FFFFFF;
+    }
+#start{
+    display:none;
+    position: absolute;
+    width: 233px;
+    height: 64px;
+    left: 340px;
+    top: 500px;
+    border:none;
+    background: #5D6943;
+    border-radius: 40px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+/*style the flower selection*/
+/*display several seeds*/
+.inline-block {
+    padding:10px;
+    margin:auto;
+    display: inline-block;
+ }
+
+/*style the select button*/
+#buttonselect{
+    justify-content: center;
+    position:absolute;
+    width: 233px;
+    height: 64px;
+    left: 300px;
+    top: 400px;
+    color:white;
+    font-size: 20px;
+    background: #5D6943;
+    border-radius: 40px;
+}
+/*style the text*/
+#select{
+    justify-content: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 61px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #5D6943;
+
+}
+/*style the selection page*/
+#selection{
+    text-align: center;
+    align-items: center;
+    display:none;
+    position: absolute;
+    width: 886px;
+    height: 592px;
+    left: 313px;
+    top: 168px;
+    background: #FFFFFF;
+    border-radius: 20px;
+}
+/*style the imported png*/
+#pot{
+    position: absolute;
+    width: 151.15px;
+    height:80px;
+    left: 370px;
+    top: 200px;
+}
+#seed{
+    display:none;
+    position: absolute;
+    width: 49px;
+    height: 70px;
+    left: 421px;
+    top: 165px;
+}
+#grown{
+    display:none;
+    position: absolute;
+    width: 140px;
+    height: 130px;
+    left: 377px;
+    top: 110px;
+}
+
+/*style the mainpage*/
+#msg{
+    color: #5D6943;
+    position: absolute;
+    height: 66px;
+    left: 300px;
+    top: 400px;
+
+}
+#todo{
+    font-family: 'El Messiri';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 63px;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+
+}
+#buttonclock{
+    padding:0;
+    border:none;
+    position: absolute;
+    width: 143.5px;
+    height: 49px;
+    left: 612px;
+    top: 80px;
+    background: #FFFFFF;
+    border-radius: 24px 0px 0px 24px;
+    font-family: 'Inter';
+    font-style: normal;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #5D6943;
+   
+}
+#buttonToDo{
+    padding:0;
+    border:none;
+    position: absolute;
+    width: 143px;
+    height: 49px;
+    left: 756px;
+    top: 80px;
+    background: #5D6943;
+    border-radius: 0px 24px 24px 0px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    color: white;
+    
+}
+#left {
+  display: none;
+    z-index:2;
+    position: absolute;
+    width: 886px;
+    height: 592px;
+    left: 313px;
+    top: 168px;
+    background: #FFFFFF;
+    border-radius: 20px;
+
+}
+
+#right{
+  display: block;
+    position: absolute;
+    width: 886px;
+    height: 592px;
+    left: 313px;
+    top: 168px;
+    background: #FFFFFF;
+    border-radius: 20px;
+   
+  }
+
+  /*style the timer*/
+  .timer {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    padding: 24px 32px;
+    border-radius: 30px;
+    background: white;
+  }
+  
+  .timer__part {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    color: #5D6943;
+    
+  }
+  .timer__btn--control{
+    background: red;
+  }
+  .timer__btn--reset{
+    background:red;
+  }
+
+  .timer__btn--start {
+    box-sizing: border-box;
+    position: absolute;
+    justify-content: center;
+    width: 233px;
+    height: 64px;
+    left: 350px;
+    top: 500px; 
+    background: #5D6943;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 40px;
+
+  }
+  
+ 
+  
+  .timer__btn--stop {
+    background: green;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Include the padding and border in an element's total width and height */
+* {
+    box-sizing: border-box;
+    margin:0;
+  }
+  
+  /* Remove margins and padding from the list */
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  /* Style the list items */
+
+  ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background:black;
+    color:white;
+    font-size: 18px;
+    transition: 0.2s;
+  
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Set all odd list items to a different color (zebra-stripes) */
+  ul li:nth-child(odd) {
+    background: black;
+  }
+  
+  /* Darker background-color on hover */
+  ul li:hover {
+    background: black;
+  }
+  
+  /* When clicked on, add a background color and strike out text */
+  ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+  }
+  
+  /* Add a "checked" mark when clicked on */
+  ul li.checked::before {
+    content: '';
+    position: absolute;
+    
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+  }
+  
+  /* Style the close button */
+  .close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+  }
+  
+  .close:hover {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  /* Style the header */
+  .header {
+    background-color: #f44336;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+  }
+  
+  /* Clear floats after the header */
+  .header:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Style the input */
+  input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 75%;
+    padding: 10px;
+    /*float: left;*/
+    font-size: 16px;
+  }
+  
+  /* Style the "Add" button */
+  .addBtn {
+  
+
+    padding: 10px;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 0;
+  }
+  
+  .addBtn:hover {
+    background-color: #bbb;
+  }
+
+  .nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 55px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+    display: flex;
+    overflow-x: auto;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    min-width: 50px;
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-size: 13px;
+    color: #444444;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color 0.1s ease-in-out;
+}
+
+.nav__link:hover {
+    background-color: #eeeeee;
+}
+
+.nav__link--active {
+    color: #009578;
+}
+
+.nav__icon {
+    font-size: 18px;
+}
