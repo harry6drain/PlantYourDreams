@@ -3,9 +3,12 @@
    <head>
       <title>mainpage</title>
       <link rel="stylesheet" href="MainPage.css">
+      <link rel="stylesheet" href="todo-app.css">
+      <link href="https://use.fontawesome.com/releases/v6.2.1/css/all.css" rel="stylesheet">
+
    </head>
 
-   <body style="background-color: #5D6943";>
+   <body style="background-color: #5D6943">
          <button id="buttonclock">Timer</button>
          <div id="right">
             <!-- partial:index.partial.html -->
@@ -25,18 +28,8 @@
          <button id="buttonToDo">My Tasks</button>
    
          <div id="left">
-            <h2 id ="todo">Todo List</h2>
-                <input type="text" id="myInput" placeholder="Enter a new task">
-                <span onclick="newElement()" class="addBtn">Add</span>
-                <ul id="myUL">
-                    <li>Hit the gym</li>
-                    <li class="checked">Pay bills</li>
-                    <li>Meet George</li>
-                    <li>Buy eggs</li>
-                    <li>Read a book</li>
-                    <li>Organize office</li>
-           
-         </div>  
+            
+          </div>  
          
          <div id="selection">
             <h2 id="select">Which flower do you want to plant?</h2>
@@ -82,11 +75,17 @@
              <span class="nav__text">Settings</span>
            </a>
          </nav>
-  
-         
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
    <script type= "module" src="Script.js"></script>
   
    <script  type ="module" src="timerscript.js"></script>
+
+   <script type = "module" src="todo.js"></script>
+   <script type = "module" src="./todo-app/index.js"></script>
+
     <!-- <script  type="module" src="database.js"> -->
   <!-- //   import {AddDocument_AutoID} from "database.js"
   //  </script> -->
