@@ -1,8 +1,8 @@
 {
   "name": "plantyourdreams",
   "version": "1.0.0",
-  "description": "480-071 Final Project",
-  "main": "login.js",
+  "description": "Task focus app with Todo, Countdown features",
+  "main": "Script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "tailwindcss -i ./src/todo-app/index.css -o ./src/todo-app.css",

@@ -1,5 +1,9 @@
 $(document).ready(function(){
+
+
 	document.body.style.zoom="90%"
+
+
 	$(".largeGrid").click(function(){											
     $(this).find('a').addClass('active');
     $('.smallGrid a').removeClass('active');
@@ -78,30 +82,7 @@ $(document).ready(function(){
 			}, 150);			
 		});			
 		
-		// Flip card back to the front side
-		$(el).find('.flip-back').click(function(){		
-			
-			$(el).find('.make3D').removeClass('flip180').addClass('flip190');
-			setTimeout(function(){
-				$(el).find('.make3D').removeClass('flip190').addClass('flip90');
 		
-				$(el).find('.product-back div.shadow').css('opacity', 0).fadeTo( 100 , 1, function(){
-					$(el).find('.product-back, .product-back div.shadow').hide();
-					$(el).find('.product-front, .product-front div.shadow').show();
-				});
-			}, 50);
-			
-			setTimeout(function(){
-				$(el).find('.make3D').removeClass('flip90').addClass('flip-10');
-				$(el).find('.product-front div.shadow').show().fadeTo( 100 , 0);
-				setTimeout(function(){						
-					$(el).find('.product-front div.shadow').hide();
-					$(el).find('.make3D').removeClass('flip-10').css('transition', '100ms ease-out');		
-					$(el).find('.cx, .cy').removeClass('s1 s2 s3');			
-				}, 100);			
-			}, 150);			
-			
-		});				
 	
 		makeCarousel(el);
 	});
@@ -126,7 +107,7 @@ $(document).ready(function(){
 			$("body").removeClass("MakeFloatingCart");
 
 
-			var cartItem = "<div class='cart-item'><div class='img-wrap'><img src='"+img.src+"' alt='' /></div><span>"+productName+"</span><strong>$39</strong><div class='cart-item-border'></div><div class='delete-item'></div></div>";			
+			var cartItem = "<div class='cart-item'><div class='img-wrap'><img src='"+img.src+"' alt='' /></div><span>"+productName+"</span><strong>$500</strong><div class='cart-item-border'></div><div class='delete-item'></div></div>";			
 
 			$("#cart .empty").hide();			
 			$("#cart").append(cartItem);
@@ -153,7 +134,7 @@ $(document).ready(function(){
 		});
 	})
 	
-	/* ----  Image Gallery Carousel   ---- */
+	// Image Gallery Carousel  
 	function makeCarousel(el){
 	
 		
@@ -237,7 +218,7 @@ $(document).ready(function(){
 			$("body").removeClass("MakeFloatingCart");
 
 
-			var cartItem = "<div class='cart-item'><div class='img-wrap'><img src='"+productImage+"' alt='' /></div><span>"+productName+"</span><strong>$39</strong><div class='cart-item-border'></div><div class='delete-item'></div></div>";			
+			var cartItem = "<div class='cart-item'><div class='img-wrap'><img src='"+productImage+"' alt='' /></div><span>"+productName+"</span><strong>$500</strong><div class='cart-item-border'></div><div class='delete-item'></div></div>";			
 
 			$("#cart .empty").hide();			
 			$("#cart").append(cartItem);
@@ -260,4 +241,50 @@ $(document).ready(function(){
 			
 		}, 1000);
 	});
+
+//check out function
+
+$('.check_out').click(function(){
+	var productCard = $(this).parent();
+		var position = productCard.offset();
+		var productImage = $(productCard).find('img').get(0).src;
+		var productName = $(productCard).find('.product_name').get(0).innerHTML;	
+		
+		$("body").append('<div class="floating-cart"></div>');		
+		var cart = $('div.floating-cart');		
+		productCard.clone().appendTo(cart);
+
+		var cartItem = "<div class='cart-item'><div class='img-wrap'><img src='"+productImage+"' alt='' /></div><span>"+productName+"</span><strong>$500</strong><div class='cart-item-border'></div><div class='delete-item'></div></div>";			
+
+			$("#cart .empty").hide();			
+			$("#cart").append(cartItem);
+			$("#checkout").fadeIn(500);
+
+
+
+});
+
+
+let checkout=document.getElementById("checkout");
+let balance = 1000;
+document.getElementById("checkout").onclick = function() {checkOut()};
+document.getElementById("balance").innerHTML = balance;
+    
+
+function checkOut() {
+if (balance<=500){
+	document.getElementById("myText").innerHTML = "Not enough balance";
+}
+else{
+ balance =balance-500;
+  document.getElementById("checkout").innerHTML = "Purchased!";
+  document.getElementById("balance").innerHTML = balance;
+ // document.getElementById("balance").innerHTML = balance;
+  
+  var v = "The following was purchased";
+	document.getElementById("myText").innerHTML = v;
+}
+//document.location.reload(true);
+}
+
 });
