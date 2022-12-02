@@ -8,7 +8,7 @@ let divclock =document.getElementById("right");
 let seedselect=document.getElementById("pot")
 let seedshow=document.getElementById("seed");
 let divselect=document.getElementById("selection");
-let timer=document.getElementById("timer");
+export const timer=document.getElementById("timer");
 let tulip_select=document.getElementById("tulip");
 let dand_select=document.getElementById("dandelion");
 let three_select=document.getElementById("threeleaf");
@@ -46,6 +46,7 @@ onAuthStateChanged(auth, (user) => {
       User = auth.currentUser;
       const uid = User.uid;
       console.log(uid);
+      window.sessionStorage.setItem("uid",uid)
       // ...
     } else {
       // User is signed out

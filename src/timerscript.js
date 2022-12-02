@@ -5,7 +5,7 @@
 // https://firebase.google.com/docs/web/setup#available-libraries
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import{ getFirestore , doc,updateDoc,arrayUnion,getDoc,setDoc} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-import {selection} from "./Script.js";
+import {selection,timer} from "./Script.js";
 import {getAuth,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
 let btns=document.getElementById("start");
