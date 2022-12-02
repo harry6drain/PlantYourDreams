@@ -46,6 +46,7 @@ onAuthStateChanged(auth, (user) => {
       User = auth.currentUser;
       const uid = User.uid;
       console.log(uid);
+      window.sessionStorage.setItem("uid",uid)
       // ...
     } else {
       // User is signed out
