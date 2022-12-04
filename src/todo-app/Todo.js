@@ -2,7 +2,7 @@
 // import { FaRegTrashAlt } from 'https://cdn.jsdelivr.net/npm/react-icons@4.6.0/fa/index.esm.js';
 
 const style = {
-  li: `flex justify-between bg-green-200 p-4 my-2 rounded-2xl capitalize`,
+  li: `flex justify-between bg-green-600 p-4 my-2 rounded-2xl capitalize`,
   liComplete: `flex justify-between bg-slate-400 p-4 my-2 rounded-lg capitalize`,
   row: `flex`,
   text: `ml-2 cursor-pointer`,
