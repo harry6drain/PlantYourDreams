@@ -70,7 +70,7 @@ btnclock.addEventListener("click",()=>{
         btnToDo.style.backgroundColor = 'white';
         btnToDo.style.color='#5D6943';
         if (left.style.display==="none"){
-            left.style.display="block";
+            left.style.display="flex";
         }else{
             left.style.display="none"
             right.style.display="block"
@@ -89,7 +89,7 @@ btnToDo.addEventListener("click",()=>{
             right.style.display="block";
         }else{
             right.style.display="none"
-            left.style.display="block"
+            left.style.display="flex"
         }
     }
     
