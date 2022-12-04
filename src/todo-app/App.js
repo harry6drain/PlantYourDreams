@@ -9,6 +9,7 @@ import {
   doc,
   addDoc,
   deleteDoc,
+  where
 } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js';
 
 const style = {
@@ -24,6 +25,8 @@ const style = {
 function App() {
   const [todos, setTodos] = React.useState([]);
   const [input, setInput] = React.useState('');
+  const userUID = sessionStorage.getItem("uid");
+  console.log(userUID);
 
   // Create todo
     //need to write uid as well
@@ -36,6 +39,7 @@ function App() {
     await addDoc(collection(db, 'todos'), {
       text: input,
       completed: false,
+      uid: userUID
     });
     setInput('');
   };
@@ -43,7 +47,7 @@ function App() {
   // Read todo from firebase
     //need to add uid filter
   React.useEffect(() => {
-    const q = query(collection(db, 'todos'));
+    const q = query(collection(db, 'todos'),where("uid","==", `${userUID}`));
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let todosArr = [];
       querySnapshot.forEach((doc) => {
