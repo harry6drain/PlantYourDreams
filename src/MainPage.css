@@ -1,3 +1,14 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 
 #timer{
     display:none;
@@ -175,7 +186,9 @@
 #left {
   display: none;
     z-index:2;
-    position: absolute;
+    align-items: center;
+    justify-content: center;
+    position: flex;
     width: 886px;
     height: 592px;
     left: 50%;
@@ -276,15 +289,15 @@
   }
   
   /* Set all odd list items to a different color (zebra-stripes) */
-  ul li:nth-child(odd) {
+  /* ul li:nth-child(odd) {
     background: black;
-  }
+  } */
   
   /* Darker background-color on hover */
   ul li:hover {
-    background: black;
+    background: grey;
   }
-  
+
   /* When clicked on, add a background color and strike out text */
   ul li.checked {
     background: #888;

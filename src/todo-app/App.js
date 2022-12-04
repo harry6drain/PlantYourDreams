@@ -13,8 +13,8 @@ import {
 } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js';
 
 const style = {
-  bg: `flex w-screen p-4 bg-gtransparent`,
-  container: `bg-transparent content-center max-w-[800px] w-full   rounded-md  shadow-xl p-4 leading-snug`,
+  bg: `flex w-full p-4 bg-gtransparent`,
+  container: `bg-transparent content-center w-full rounded-md  shadow-xl p-4 leading-snug`,
   heading: `text-4xl font-bold text-center text-zinc-600 p-2`,
   form: `flex justify-between h-10`,
   input: `border p-2 w-full text-lg`,
