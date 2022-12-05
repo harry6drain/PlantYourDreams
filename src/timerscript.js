@@ -41,13 +41,13 @@ onAuthStateChanged(auth, (user) => {
     // https://firebase.google.com/docs/reference/js/firebase.User
     User = auth.currentUser;
     const uid = User.uid;
-    alert(`Timer Lol`)
+    // alert(`Timer Lol`)
     console.log(uid);
     // ...
   } else {
     // User is signed out
     // ...
-    alert(`Time Uh-oh`)
+    alert("User logged out!")
     window.location.assign("./index.html")
   }
 });
