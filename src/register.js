@@ -12,7 +12,7 @@ registerBtn.addEventListener('click',(e) => {
         const user = userCredential.user;
         var lgDate = new Date();
         // ... user.uid
-        alert(`${user.uid} created successfully!`);
+        alert(`User created successfully!`);
         
         try{
           const docRef = await setDoc(doc(db, "users", user.uid), {
