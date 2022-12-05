@@ -69,12 +69,8 @@ btnclock.addEventListener("click",()=>{
         btnclock.style.color="white";
         btnToDo.style.backgroundColor = 'white';
         btnToDo.style.color='#5D6943';
-        if (left.style.display==="none"){
-            left.style.display="flex";
-        }else{
-            left.style.display="none"
-            right.style.display="block"
-        }
+        left.style.display="none"
+        right.style.display="block"
     }
     
 })
@@ -85,12 +81,8 @@ btnToDo.addEventListener("click",()=>{
         btnToDo.style.color="white";
         btnclock.style.backgroundColor = 'white';
         btnclock.style.color='#5D6943';
-        if (right.style.display==="none"){
-            right.style.display="block";
-        }else{
-            right.style.display="none"
-            left.style.display="flex"
-        }
+        right.style.display="none"
+        left.style.display="flex"
     }
     
 })
@@ -98,6 +90,7 @@ btnToDo.addEventListener("click",()=>{
 seedselect.addEventListener("click",()=>{
     if (User)
         divselect.style.display="block";
+        divclock.style.display="none";
 })
 
 tulip_select.addEventListener("click",()=>{
@@ -171,6 +164,7 @@ btnSelect.addEventListener("click",()=>{
         seedshow.style.display="block";
         msg.innerHTML="Successfully Chose the Seed "
         btnstart.style.display="block";
+        divselect.style.display="none";
     }
     
 

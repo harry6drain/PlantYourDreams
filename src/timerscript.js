@@ -92,7 +92,7 @@ function promptMe() {
 
   async function endCount() {
     timeH.innerHTML = "Time out";
-    msg.innerHTML="Your flower has Grown! "
+    msg.style.display="none"
     btnanother.style.display="block"
     seedshow.style.display="none"
     grown.style.display="block"
