@@ -10,7 +10,7 @@ loginBtn.addEventListener("click",(e) => {
     .then(async (userCredential) => {
         // Signed in
         const user = userCredential.user;
-        alert(`User with uid ${user.uid} signs in successfully!`);
+        // alert(`User with uid ${user.uid} signs in successfully!`);
         // ...
 
         var lgDate = new Date();
