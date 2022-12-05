@@ -580,16 +580,8 @@ video {
   height: 2.5rem;
 }
 
-.w-screen {
-  width: 100vw;
-}
-
 .w-full {
   width: 100%;
-}
-
-.max-w-\[800px\] {
-  max-width: 800px;
 }
 
 .cursor-pointer {
@@ -620,10 +612,6 @@ video {
   border-radius: 1rem;
 }
 
-.rounded-lg {
-  border-radius: 0.5rem;
-}
-
 .border {
   border-width: 1px;
 }
@@ -637,9 +625,9 @@ video {
   background-color: rgb(124 139 92 / var(--tw-bg-opacity));
 }
 
-.bg-green-600 {
+.bg-lime-600 {
   --tw-bg-opacity: 1;
-  background-color: rgb(22 163 74 / var(--tw-bg-opacity));
+  background-color: rgb(101 163 13 / var(--tw-bg-opacity));
 }
 
 .bg-slate-400 {
