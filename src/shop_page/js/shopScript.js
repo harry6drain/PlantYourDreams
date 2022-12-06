@@ -2,6 +2,8 @@ import {auth,db} from "../../firebase.js"
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
 import { doc, getDoc,updateDoc } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js";
 var numOfItems = 0;
+const UID = window.sessionStorage.getItem("uid")
+let cartPlants = [];
 
 $(document).ready(function(){
 
@@ -208,7 +210,6 @@ $(document).ready(function(){
 	});
 	
 	$('.add_to_cart').click(function(){
-		numOfItems += 1
 		var productCard = $(this).parent();
 		var position = productCard.offset();
 		var productImage = $(productCard).find('img').get(0).src;
@@ -228,6 +229,9 @@ $(document).ready(function(){
 
 			$("#cart .empty").hide();			
 			$("#cart").append(cartItem);
+			cartPlants.push(productName);
+			numOfItems += 1
+			console.log(cartPlants);
 			$("#checkout").fadeIn(500);
 			
 			$("#cart .cart-item").last()
@@ -235,7 +239,13 @@ $(document).ready(function(){
 				.find(".delete-item").click(function(){
 					$(this).parent().fadeOut(300, function(){
 						$(this).remove();//remove an item from cart
-						numOfItems -= 1
+						const removeIdx = cartPlants.indexOf(productName);
+						// console.log(removeIdx);
+						cartPlants = cartPlants.filter((plant,idx) => {
+							return idx !== removeIdx
+						});
+						numOfItems -= 1;
+						console.log(cartPlants);
 						if($("#cart .cart-item").size() == 0){
 							$("#cart .empty").fadeIn(500);
 							$("#checkout").fadeOut(500);
@@ -291,7 +301,6 @@ $('.check_out').click(function(){
 //       window.location.replace("./index.html")
 //     }
 // });
-const UID = window.sessionStorage.getItem("uid")
 
 const docRef = doc(db, "users",UID);
 const docSnap = await getDoc(docRef);
