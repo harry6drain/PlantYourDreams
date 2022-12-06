@@ -336,7 +336,9 @@ else{
 		Inventory:freqMap
 	});
 
+	// empty the cart and counter
 	numOfItems = 0
+	cartPlants = [];
 }
 // document.location.reload(true);
 }
