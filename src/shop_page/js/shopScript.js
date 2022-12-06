@@ -293,9 +293,12 @@ document.getElementById("checkout").onclick = function() {checkOut()};
 document.getElementById("balance").innerHTML = curBal;
 
 const seedRef = doc(db,"seed",UID);
+// Get user's current inventory of seeds
 const seedSnap = await getDoc(seedRef);
+// Check if the collection exists
 const plantedExist = seedSnap.exists();
 
+// TODO: Need to clear the cart after checkout
 async function checkOut() {
 if (curBal<500*numOfItems){
 	document.getElementById("myText").innerHTML = "Not enough balance";
@@ -314,20 +317,24 @@ else{
 	var v = "The following was purchased";
 	document.getElementById("myText").innerHTML = v;
 
-	let uniqCart = [...new Set(cartPlants)];
+	let freqMap = {};
 	if (plantedExist){
-		const prevPlanted = seedSnap.data().planted;
-		const updatePlanted = [...prevPlanted,...uniqCart]
-		updateDoc(seedRef,{
-			planted:[...new Set(updatePlanted)]
-		})
+		const prevFreqMap = seedSnap.data().Inventory;
+		freqMap = prevFreqMap
 	}
-	else{	
-		await setDoc(seedRef, {
-			planted: uniqCart
-		});
-	}
+
+	cartPlants.forEach((plant) => {
+		if (freqMap[plant]){
+			freqMap[plant]++;
+		}
+		else{
+			freqMap[plant] = 1;
+		}
+	})
 	
+	await setDoc(seedRef, {
+		Inventory:freqMap
+	});
 
 	numOfItems = 0
 }
