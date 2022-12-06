@@ -71,6 +71,7 @@ btnclock.addEventListener("click",()=>{
         btnToDo.style.color='#5D6943';
         left.style.display="none"
         right.style.display="block"
+        
     }
     
 })
@@ -83,6 +84,7 @@ btnToDo.addEventListener("click",()=>{
         btnclock.style.color='#5D6943';
         right.style.display="none"
         left.style.display="flex"
+        divselect.style.display="none"
     }
     
 })
