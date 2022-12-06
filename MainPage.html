@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>mainpage</title>
+      <link rel="stylesheet" href="MainPage.css">
+   </head>
+
+   <body style="background-color: #5D6943";>
+  
+         <button id="buttonclock">Timer</button>
+         <div id="right">
+            <!-- partial:index.partial.html -->
+            <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+            <div class="timer"></div>
+            <!-- partial -->
+            <img id = "pot" src="timer/pot.png">
+            <img id = "seed" src="timer/seed.png">
+            <h2 id="msg">Click pot to choose seed first</h2>
+         </div>
+
+         <button id="buttonToDo">My Tasks</button>
+         <!-- <button id="buttonClock"> Clock</button> -->
+         <div id="left">
+            <h2 id ="todo">Todo List</h2>
+                <input type="text" id="myInput" placeholder="Enter a new task">
+                <span onclick="newElement()" class="addBtn">Add</span>
+                <ul id="myUL">
+                    <li>Hit the gym</li>
+                    <li class="checked">Pay bills</li>
+                    <li>Meet George</li>
+                    <li>Buy eggs</li>
+                    <li>Read a book</li>
+                    <li>Organize office</li>
+           
+         </div>  
+         
+         <div id="selection">
+            <h2 id="select">Which flower do you want to plant?</h2>
+            <div class="inline-block">
+            <img id = "tulip" src="timer/Tulip.png">
+            </div>
+            <div class="inline-block">
+            <img id = "dandelion" src="timer/Dandelion.png">
+            </div>
+            <div class="inline-block">
+            <img id = "threeleaf" src="timer/Three Leaf Clover.png">
+            </div>
+            <div class="inline-block">
+            <img id = "cactus" src="timer/Cactus.png">
+            </div>
+            <div class="inline-block">
+            <img id = "cotton" src="timer/Cotton.png">
+            </div>
+            <button id="buttonselect">select</button>
+         </div>
+
+
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+         <nav class="nav">
+           <a href="MainPage.html" class="nav__link">
+             <i class="material-icons nav__icon">dashboard</i>
+             <span class="nav__text">Home</span>
+           </a>
+           <a href="#" class="nav__link nav__link--active">
+             <i class="material-icons nav__icon">person</i>
+             <span class="nav__text">My Garden</span>
+           </a>
+           <a href="#" class="nav__link">
+             <i class="material-icons nav__icon">shopping_cart_checkout</i>
+             <span class="nav__text">Shop</span>
+           </a>
+           <a href="#" class="nav__link">
+             <i class="material-icons nav__icon">diversity_3</i>
+             <span class="nav__text">Friends</span>
+           </a>
+           <a href="#" class="nav__link">
+             <i class="material-icons nav__icon">settings</i>
+             <span class="nav__text">Settings</span>
+           </a>
+         </nav>
+  
+         
+   <script  src="Script.js"></script>
+   <script  src="timer/script.js"></script>
+   <script  src="todo-list/todo-list.js"></script>
+   </body>
+</html>
