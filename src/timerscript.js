@@ -66,6 +66,13 @@ btns.addEventListener("click",()=>{
 
 function promptMe() {
   input= prompt("Enter the minutes you want to stay focused: ");
+  if (input==null){
+    alert(' Cancel pressed')
+    promptMe()
+  }
+  while(input === "" || isNaN(input)){
+    input = prompt("Enter the minutes you want to stay focused: ");
+}   
   time=input*60;
   msg.innerHTML="Your Plant is Growing..."
   timer.style.display="block";
