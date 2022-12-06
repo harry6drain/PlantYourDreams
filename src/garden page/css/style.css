@@ -1,8 +1,6 @@
 /*	Reset & General
 ---------------------------------------------------------------------- */
-#my{
-	zoom: 90%;
-	}
+
 * { margin: 0px; padding: 0px; }
 body {
 	font-family: "Open Sans", sans-serif; 
@@ -10,7 +8,7 @@ body {
 #wrapper{
 	overflow: hidden;
 	height: 1153px;
-	width: 1643px;
+	width: 100%;
 	background:#7C8B5C;
 }
 #header{
@@ -954,3 +952,4 @@ div.sku strong{
 .nav__icon {
     font-size: 18px;
 }
+
