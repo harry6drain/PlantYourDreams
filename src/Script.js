@@ -71,6 +71,7 @@ btnclock.addEventListener("click",()=>{
         btnToDo.style.color='#5D6943';
         left.style.display="none"
         right.style.display="block"
+        divselect.style.display="none"
         
     }
     
