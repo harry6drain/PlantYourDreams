@@ -1,8 +1,6 @@
 /*	Reset & General
 ---------------------------------------------------------------------- */
-#my{
-	zoom: 90%;
-	}
+
 * { margin: 0px; padding: 0px; }
 body {
 	font-family: "Open Sans", sans-serif; 
@@ -10,10 +8,11 @@ body {
 #wrapper{
 	overflow: hidden;
 	height: 1153px;
-	width: 1643px;
+	width: 100%;
 	background:#ffffff;
 }
 #header{
+	
 	text-align: center;
 	height:92px; 
 	background:#fff ;
@@ -28,6 +27,7 @@ body {
 }
 #header li a{
 	text-align: center;
+	align-items: center;
 	font-weight:700;
 	color:#333;
 	font-size:30px;	
@@ -41,8 +41,9 @@ body {
 	cursor:pointer;
 }
 #grid-selector{
-	height: 10px;
-	width: 1291px;
+	align-items: center;
+	height: auto;
+	width: auto;
 	padding: 40px 0 40px 30px;
 	float: right;
 	color: #5d5f68;
