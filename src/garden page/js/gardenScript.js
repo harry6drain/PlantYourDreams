@@ -1,3 +1,7 @@
+import { db } from "../../firebase.js";
+const UID = window.sessionStorage.getItem("uid")
+
+
 $(document).ready(function(){
 	document.body.style.zoom="90%"
 	$(".largeGrid").click(function(){											
@@ -104,3 +108,6 @@ $(document).ready(function(){
 	
 	
 });
+
+const docRef = doc(db, "seed",UID);
+const docSnap = await getDoc(docRef);
