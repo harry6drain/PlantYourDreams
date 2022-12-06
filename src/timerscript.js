@@ -113,22 +113,22 @@ function promptMe() {
         planted: plants
       });
     }
-    
+  
+    const UID = window.sessionStorage.getItem("uid")
+    const docRef_balance = doc(db, "users",UID);
+    const docSnap_balance = await getDoc(docRef_balance);
+    let curBal = docSnap_balance.data().balance;
+    updateDoc(docRef_balance, {
+      balance:curBal+500
+    });
     
   }
+  
+ 
 
-//   async function AddDocument_AutoID(){
-//     var ref=collection(db,"seed");
-//     try{
-//       const docRef=await addDoc(
-//         ref,{
-//             planted:selection
-//         }
-//       )
-//       console.log("!!!")
-//     }
-//     catch(err){
-//       console.log(err)
-//     }
 
-// }
+
+  
+ 
+  
+  
