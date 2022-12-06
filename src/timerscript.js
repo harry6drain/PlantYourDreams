@@ -98,6 +98,7 @@ function promptMe() {
     grown.style.display="block"
     // AddDocument_AutoID();
     // Addseed();
+    balancemsg.style.display="block"
     const docRef = doc(db,"seed",User.uid);
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()){

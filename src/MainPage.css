@@ -20,6 +20,19 @@ body {
     color: #5D6943;
 
 }
+#balancemsg{
+  display:none;
+  color: #5D6943;
+  position: relative;
+  height: 66px;
+  left: 300px;
+  top: 20%;
+  left:36%;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+}
 #another{
   display:none;
   position: relative;
