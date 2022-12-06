@@ -1,6 +1,6 @@
 import {auth,db} from "../../firebase.js"
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
-import { doc, getDoc,updateDoc } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js";
+import { doc, getDoc,updateDoc,setDoc } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js";
 var numOfItems = 0;
 const UID = window.sessionStorage.getItem("uid")
 let cartPlants = [];
@@ -282,37 +282,21 @@ $('.check_out').click(function(){
 });
 });
 
-// let User;
-// let UID;
-// onAuthStateChanged(auth, (user) => {
-//     if (user) {
-//       // User is signed in, see docs for a list of available properties
-//       // https://firebase.google.com/docs/reference/js/firebase.User
-//       User = auth.currentUser;
-//       UID = User.uid;
-//       alert(UID);
-//     //   window.sessionStorage.setItem("uid",uid)
-//       // ...
-//     } else {
-//       // User is signed out
-//       // ...
-//       User = null;
-//       console.log("Uh-oh");
-//       window.location.replace("./index.html")
-//     }
-// });
 
-const docRef = doc(db, "users",UID);
-const docSnap = await getDoc(docRef);
+const userRef = doc(db, "users",UID);
+const userSnap = await getDoc(userRef);
 
 let checkout=document.getElementById("checkout");
-let curBal = docSnap.data().balance;
+let curBal = userSnap.data().balance;
 console.log(curBal)
 document.getElementById("checkout").onclick = function() {checkOut()};
 document.getElementById("balance").innerHTML = curBal;
 
+const seedRef = doc(db,"seed",UID);
+const seedSnap = await getDoc(seedRef);
+const plantedExist = seedSnap.exists();
 
- function checkOut() {
+async function checkOut() {
 if (curBal<500*numOfItems){
 	document.getElementById("myText").innerHTML = "Not enough balance";
 }
@@ -320,7 +304,7 @@ else{
 	console.log(numOfItems);
 	curBal -= numOfItems * 500;
  	console.log(curBal);
-	updateDoc(docRef, {
+	updateDoc(userRef, {
 		balance:curBal
 	});
 	document.getElementById("checkout").innerHTML = "Purchased!";
@@ -329,6 +313,22 @@ else{
 	
 	var v = "The following was purchased";
 	document.getElementById("myText").innerHTML = v;
+
+	let uniqCart = [...new Set(cartPlants)];
+	if (plantedExist){
+		const prevPlanted = seedSnap.data().planted;
+		const updatePlanted = [...prevPlanted,...uniqCart]
+		updateDoc(seedRef,{
+			planted:[...new Set(updatePlanted)]
+		})
+	}
+	else{	
+		await setDoc(seedRef, {
+			planted: uniqCart
+		});
+	}
+	
+
 	numOfItems = 0
 }
 // document.location.reload(true);
