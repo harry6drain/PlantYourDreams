@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+
+=======
+>>>>>>> remotes/origin/Rita
 class Timer {
     constructor(root) {
       root.innerHTML = Timer.getHTML();
@@ -48,6 +52,11 @@ class Timer {
         this.el.control.innerHTML = `<span class="material-icons">pause</span>`;
         this.el.control.classList.add("timer__btn--stop");
         this.el.control.classList.remove("timer__btn--start");
+<<<<<<< HEAD
+        
+
+=======
+>>>>>>> remotes/origin/Rita
       }
     }
   
