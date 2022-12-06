@@ -17,7 +17,8 @@ registerBtn.addEventListener('click',(e) => {
         try{
           const docRef = await setDoc(doc(db, "users", user.uid), {
             email: user.email,
-            lastLogin: lgDate
+            lastLogin: lgDate,
+            balance: 1000
           })
           //console.log("Document written with ID: ", docRef.id);
           window.location.assign("./index.html")

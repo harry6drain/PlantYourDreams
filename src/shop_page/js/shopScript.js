@@ -1,3 +1,8 @@
+import {auth,db} from "../../firebase.js"
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
+import { doc, getDoc,updateDoc } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js";
+var numOfItems = 0;
+
 $(document).ready(function(){
 
 
@@ -203,6 +208,7 @@ $(document).ready(function(){
 	});
 	
 	$('.add_to_cart').click(function(){
+		numOfItems += 1
 		var productCard = $(this).parent();
 		var position = productCard.offset();
 		var productImage = $(productCard).find('img').get(0).src;
@@ -228,7 +234,8 @@ $(document).ready(function(){
 				.addClass("flash")
 				.find(".delete-item").click(function(){
 					$(this).parent().fadeOut(300, function(){
-						$(this).remove();
+						$(this).remove();//remove an item from cart
+						numOfItems -= 1
 						if($("#cart .cart-item").size() == 0){
 							$("#cart .empty").fadeIn(500);
 							$("#checkout").fadeOut(500);
@@ -263,28 +270,58 @@ $('.check_out').click(function(){
 
 
 });
+});
 
+// let User;
+// let UID;
+// onAuthStateChanged(auth, (user) => {
+//     if (user) {
+//       // User is signed in, see docs for a list of available properties
+//       // https://firebase.google.com/docs/reference/js/firebase.User
+//       User = auth.currentUser;
+//       UID = User.uid;
+//       alert(UID);
+//     //   window.sessionStorage.setItem("uid",uid)
+//       // ...
+//     } else {
+//       // User is signed out
+//       // ...
+//       User = null;
+//       console.log("Uh-oh");
+//       window.location.replace("./index.html")
+//     }
+// });
+const UID = window.sessionStorage.getItem("uid")
+
+const docRef = doc(db, "users",UID);
+const docSnap = await getDoc(docRef);
 
 let checkout=document.getElementById("checkout");
-let balance = 1000;
+let curBal = docSnap.data().balance;
+console.log(curBal)
 document.getElementById("checkout").onclick = function() {checkOut()};
-document.getElementById("balance").innerHTML = balance;
-    
+document.getElementById("balance").innerHTML = curBal;
 
-function checkOut() {
-if (balance<=500){
+
+ function checkOut() {
+if (curBal<500*numOfItems){
 	document.getElementById("myText").innerHTML = "Not enough balance";
 }
 else{
- balance =balance-500;
-  document.getElementById("checkout").innerHTML = "Purchased!";
-  document.getElementById("balance").innerHTML = balance;
- // document.getElementById("balance").innerHTML = balance;
-  
-  var v = "The following was purchased";
+	console.log(numOfItems);
+	curBal -= numOfItems * 500;
+ 	console.log(curBal);
+	updateDoc(docRef, {
+		balance:curBal
+	});
+	document.getElementById("checkout").innerHTML = "Purchased!";
+	document.getElementById("balance").innerHTML = curBal;
+	// document.getElementById("balance").innerHTML = balance;
+	
+	var v = "The following was purchased";
 	document.getElementById("myText").innerHTML = v;
+	numOfItems = 0
 }
-//document.location.reload(true);
+// document.location.reload(true);
 }
 
-});
