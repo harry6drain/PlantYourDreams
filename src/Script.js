@@ -21,7 +21,7 @@ let btnstart=document.getElementById("start");
 let btnanother=document.getElementById("another");
 let grown=document.getElementById("grown");
 let selection;
-export{selection};
+// export{selection};
 let links = document.querySelectorAll('.nav-link');
 import {selecting} from "./seedselect.js"
 

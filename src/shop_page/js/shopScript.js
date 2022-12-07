@@ -227,7 +227,8 @@ $(document).ready(function(){
 
 			var cartItem = "<div class='cart-item'><div class='img-wrap'><img src='"+productImage+"' alt='' /></div><span>"+productName+"</span><strong>$500</strong><div class='cart-item-border'></div><div class='delete-item'></div></div>";			
 
-			$("#cart .empty").hide();			
+			$("#cart .empty").hide();
+			//Add item display to cart (delete all cartItem if we want to clear cart)	
 			$("#cart").append(cartItem);
 			cartPlants.push(productName);
 			numOfItems += 1
@@ -310,12 +311,13 @@ else{
 	updateDoc(userRef, {
 		balance:curBal
 	});
-	document.getElementById("checkout").innerHTML = "Purchased!";
+	// document.getElementById("checkout").innerHTML = "Purchased!";
 	document.getElementById("balance").innerHTML = curBal;
 	// document.getElementById("balance").innerHTML = balance;
 	
 	var v = "The following was purchased";
 	document.getElementById("myText").innerHTML = v;
+	$("#myText").fadeOut(3000);
 
 	let freqMap = {};
 	if (plantedExist){
@@ -339,6 +341,8 @@ else{
 	// empty the cart and counter
 	numOfItems = 0
 	cartPlants = [];
+
+	$('#cart div.cart-item').remove();
 }
 // document.location.reload(true);
 }
