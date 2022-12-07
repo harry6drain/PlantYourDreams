@@ -14,6 +14,8 @@ logoutBtn.addEventListener("click", () => {
     signOut(auth)
         .then(() => {
             console.log('user signed out')
+            window.sessionStorage.clear();
+
         })
         .catch((err) => {
             console.log(err.message)
