@@ -1,6 +1,6 @@
 import { db } from "../../firebase.js";
+import { doc,getDoc } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js";
 const UID = window.sessionStorage.getItem("uid")
-
 
 $(document).ready(function(){
 	document.body.style.zoom="90%"
