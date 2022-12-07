@@ -1,5 +1,6 @@
-import { auth } from "./firebase.js"
+import { auth,db } from "./firebase.js"
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js"
+import {doc, getDoc} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 let btnToDo=document.getElementById('buttonToDo');
 let btnclock=document.getElementById('buttonclock');
@@ -21,6 +22,9 @@ let btnanother=document.getElementById("another");
 let grown=document.getElementById("grown");
 let selection;
 let links = document.querySelectorAll('.nav-link');
+import {selecting} from "./seedselect.js"
+
+
 
 for(let i=0; i<links.length; i++){
   links[i].addEventListener('click', function() {
@@ -39,6 +43,7 @@ btnSelect.disabled=true;
 // })
 
 let User;
+let UID;
 onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
@@ -47,6 +52,7 @@ onAuthStateChanged(auth, (user) => {
       const uid = User.uid;
       console.log(uid);
       window.sessionStorage.setItem("uid",uid)
+      UID = uid;
       // ...
     } else {
       // User is signed out
@@ -89,11 +95,32 @@ btnToDo.addEventListener("click",()=>{
     }
     
 })
+// const UID = window.sessionStorage.getItem("uid");
+// const docRef = doc(db,"seed",UID);//get user seed collection info
+// const docSnap = await getDoc(docRef);
 
 seedselect.addEventListener("click",()=>{
-    if (User)
+    if (User){
         divselect.style.display="block";
         divclock.style.display="none";
+        // const map1=docSnap.data().Inventory;
+        // for (const [key, value] of Object.entries(map1)) {
+        //     console.log(key, value);
+        //     if (key=="Dandelion"){
+        //     dand_select.style.display="block"   
+        //     }
+        //     if (key=="Clover"){
+        //     three_select.style.display="block" 
+        //     }
+        //     if (key=="Cactus"){
+        //     cactus_select.style.display="block"
+        //     }
+        //     if (key=="Cotton"){
+        //     cotton_select.style.display="block"
+        //     } 
+        // }
+        selecting(UID);
+    }
 })
 
 tulip_select.addEventListener("click",()=>{
@@ -173,4 +200,4 @@ btnSelect.addEventListener("click",()=>{
 
     //timer.style.display="block";
 })
-export {selection};
+// export {selection};
