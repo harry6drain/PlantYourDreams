@@ -130,10 +130,12 @@ function promptMe() {
         map[key] = value
         if (value === 0){
           delete map[key];
-        }
+        }  
         updateDoc(docRef_seeds, {
           Inventory:map
         });
+        
+        
       }
       
     }
