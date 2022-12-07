@@ -138,7 +138,7 @@ body {
   height:80px;
   left: 43%; 
   top: 30%; 
-  
+  pointer-events: all;
 }
 #seed{
   display:none;
