@@ -7,7 +7,7 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/9.13.0/firebase
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
+export const firebaseConfig = {
     apiKey: "AIzaSyAUS-fQ46Gv4kuLEqvYurwQJ5inCRkLA1U",
     authDomain: "plantyourdreams-8d08e.firebaseapp.com",
     projectId: "plantyourdreams-8d08e",
@@ -18,6 +18,6 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 export const db = getFirestore(app);
