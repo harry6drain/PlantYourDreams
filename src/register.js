@@ -24,14 +24,14 @@ registerBtn.addEventListener('click',(e) => {
           window.location.assign("./index.html")
         }
         catch(error){
-            console.error("Error adding document: ", error);
+            console.error("Error adding user info: ", error);
         }
     })
     .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         // ..
-        alert(errorMessage);
+        alert(errorCode);
     });
 
 

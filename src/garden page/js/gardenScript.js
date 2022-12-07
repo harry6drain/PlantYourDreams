@@ -9,7 +9,7 @@ const docSnap = await getDoc(docRef);
 // if (docSnap.exists() && docSnap.data().Inventory!=null){
 // /
 const invtSeeds = docSnap.data().Inventory;
-console.log(typeof invtSeeds);
+// console.log(typeof invtSeeds);
 for (const plant in invtSeeds){
 	$("#grid").append(`<div class="product">
 	<div class="info-large">
