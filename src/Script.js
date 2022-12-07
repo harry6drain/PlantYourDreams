@@ -21,6 +21,7 @@ let btnstart=document.getElementById("start");
 let btnanother=document.getElementById("another");
 let grown=document.getElementById("grown");
 let selection;
+export{selection};
 let links = document.querySelectorAll('.nav-link');
 import {selecting} from "./seedselect.js"
 
@@ -130,7 +131,7 @@ tulip_select.addEventListener("click",()=>{
         three_select.style.border=""
         cactus_select.style.border=""
         cotton_select.style.border=""
-        selection="tulip"
+        // selection="tulip"
         btnSelect.disabled=false;
     }
     
@@ -143,7 +144,7 @@ dand_select.addEventListener("click",()=>{
         three_select.style.border=""
         cactus_select.style.border=""
         cotton_select.style.border=""
-        selection="dandelion"
+        selection="Dandelion"
         btnSelect.disabled=false;
     }
     
@@ -156,7 +157,7 @@ three_select.addEventListener("click",()=>{
         tulip_select.style.border=""
         cactus_select.style.border=""
         cotton_select.style.border=""
-        selection="three leaf"
+        selection="Clover"
         btnSelect.disabled=false;
     }
     
@@ -169,7 +170,7 @@ cactus_select.addEventListener("click",()=>{
         three_select.style.border=""
         tulip_select.style.border=""
         cotton_select.style.border=""
-        selection="cactus"
+        selection="Cactus"
         btnSelect.disabled=false;
     }
     
@@ -181,7 +182,7 @@ cotton_select.addEventListener("click",()=>{
         three_select.style.border=""
         cactus_select.style.border=""
         tulip_select.style.border=""
-        selection="cotton"
+        selection="Cotton"
         btnSelect.disabled=false;
     }
     
@@ -195,6 +196,7 @@ btnSelect.addEventListener("click",()=>{
         msg.innerHTML="Successfully Chose the Seed "
         btnstart.style.display="block";
         divselect.style.display="none";
+        
     }
     
 

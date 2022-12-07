@@ -44,7 +44,7 @@ async function selecting(UID){
   const map1=docSnap.data().Inventory;
   
   for (const [key, value] of Object.entries(map1)) {
-    console.log(key, value);
+
     if (key=="Dandelion"){
       dand_select.style.display="block"
       

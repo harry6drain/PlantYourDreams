@@ -55,6 +55,7 @@ onAuthStateChanged(auth, (user) => {
 
 
 btns.addEventListener("click",()=>{
+  // console.log("starting,,,")
     if (User){
       promptMe();
     }
@@ -106,20 +107,7 @@ function promptMe() {
     // AddDocument_AutoID();
     // Addseed();
     balancemsg.style.display="block"
-    const docRef = doc(db,"seed",User.uid);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()){
-      await updateDoc(docRef, {
-        planted: arrayUnion(selection)
-      });
-    }
-    else{
-      const plants = new Array();
-      plants.push(selection);
-      await setDoc(docRef, {
-        planted: plants
-      });
-    }
+   
   
     const UID = window.sessionStorage.getItem("uid")
     const docRef_balance = doc(db, "users",UID);
@@ -128,6 +116,25 @@ function promptMe() {
     updateDoc(docRef_balance, {
       balance:curBal+500
     });
+
+    const docRef_seeds=doc(db,"seed",UID);
+    const docSnap_seeds=await getDoc(docRef_seeds);
+    console.log(docSnap_seeds.data().Inventory);
+    const map=docSnap_seeds.data().Inventory; //map
+    
+    for (let [key, value] of Object.entries(map)) {
+      
+      if (key==selection){
+        // console.log(value)
+        value=value-1;
+        map[key] = value
+        updateDoc(docRef_seeds, {
+          Inventory:map
+        });
+      }
+      
+    }
+    
     
   }
   
