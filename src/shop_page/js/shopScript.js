@@ -343,7 +343,12 @@ else{
 	numOfItems = 0
 	cartPlants = [];
 
-	$('#cart div.cart-item').remove();
+	$('#cart div.cart-item').fadeOut(300,function(){
+		$(this).remove();
+		$("#cart .empty").fadeIn(500);
+		$("#checkout").fadeOut(500);
+		
+	});
 }
 // document.location.reload(true);
 }
