@@ -1,18 +1,20 @@
 /*	Reset & General
 ---------------------------------------------------------------------- */
 
-* { margin: 0px; padding: 0px; }
+* { 	height: auto; margin: 0px; padding: 0px; }
+
 body {
+	
 	font-family: "Open Sans", sans-serif; 
 }
 #wrapper{
 	overflow: hidden;
-	height: 1153px;
+	flex-wrap: wrap;
+	height: 100%;
 	width: 100%;
 	background:#ffffff;
 }
 #header{
-	
 	text-align: center;
 	height:92px; 
 	background:#fff ;
@@ -79,10 +81,10 @@ body {
  
 
 #grid{	
-	width: 1335px;
-	position: absolute;
+	width: 100%;
+	/* position: relative; */
 	left: 340px;
-	height: 1200px;
+	height: 100%;
 	top: 180px;
 }
 #sidebar{
@@ -747,24 +749,24 @@ body.MakeFloatingCart div.floating-cart.moveToCart{
  		    transition: all 200ms ease-out;
 }
 div.cart-icon-top{
-	position:absolute;
+	position:relative;
 	background:#fff url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/cart.png") 0 -3px no-repeat;
 	margin:0;
-	width:21px;
-	height:3px;
+	width:40px;
+	height:0px;
 	z-index:1;
 	top: 140px;
 	left: 90px;
 }
 div.cart-icon-bottom{
-	position:absolute;
+	position:relative;
 	background:#fff url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/cart.png") 0 -3px no-repeat;
 	margin:0;
 	width:21px;
 	height:19px;
 	z-index:1;
-	top: 143px;
-	left: 90px;
+	top: 224px;
+	left: 93px;
 }
 body.MakeFloatingCart div.cart-icon-top{z-index:30;}
 body.MakeFloatingCart div.cart-icon-bottom{z-index:300;}	
