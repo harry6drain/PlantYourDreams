@@ -111,3 +111,7 @@ $(document).ready(function(){
 
 const docRef = doc(db, "seed",UID);
 const docSnap = await getDoc(docRef);
+
+// Get all seeds in inventory field (remember to deal with non-exist)
+const invtSeeds = docSnap.data().Inventory;
+
