@@ -94,11 +94,11 @@ body {
 /*style the select button*/
 #buttonselect{
   justify-content: center;
-  position:relative;
+  position:absolute;
   width: 233px;
   height: 64px;
-  left:-30%;
-  top: 50%;
+  left:42%;
+  top:60%;
   color:white;
   font-size: 20px;
   background: #5D6943;
