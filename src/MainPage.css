@@ -18,7 +18,19 @@ body {
     font-weight: 800;
     font-size: 30px;
     color: #5D6943;
+}
 
+#dandelion{
+  display:none;
+}
+#threeleaf{
+  display:none;
+}
+#cactus{
+  display:none;
+}
+#cotton{
+  display:none;
 }
 #balancemsg{
   display:none;
@@ -82,11 +94,11 @@ body {
 /*style the select button*/
 #buttonselect{
   justify-content: center;
-  position:flex;
+  position:relative;
   width: 233px;
   height: 64px;
-  left: 50%;
-  top: 80%;
+  left:5%;
+  top: 30%;
   color:white;
   font-size: 20px;
   background: #5D6943;
