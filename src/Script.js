@@ -200,4 +200,4 @@ btnSelect.addEventListener("click",()=>{
 
     //timer.style.display="block";
 })
-// export {selection};
+export {selection};
