@@ -48,6 +48,7 @@ function App() {
     //need to add uid filter
   React.useEffect(() => {
     const q = query(collection(db, 'todos'),where("uid","==", `${userUID}`));
+    console.log(db);
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
       let todosArr = [];
       querySnapshot.forEach((doc) => {
