@@ -27,8 +27,7 @@ for (const plant in invtSeeds){
 			<div class="stats">        	
 				<div class="stats-container">
 				   
-					<span class="product_name">${plant}:${invtSeeds[plant]}</span>    
-													  
+					<span class="product_name">${plant} <br> Qty: ${invtSeeds[plant]} </span>
 					
 					<div class="product-options">
 			
