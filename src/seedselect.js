@@ -1,15 +1,16 @@
-
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import{ getFirestore, doc, getDoc} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-import {getAuth,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+// import {getAuth,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+// import { db } from "./firebase.js"
+// import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
-export{selecting};
-let dand_select=document.getElementById("dandelion");
-let three_select=document.getElementById("threeleaf");
-let cactus_select=document.getElementById("cactus");
-let cotton_select=document.getElementById("cotton");
-let msg=document.getElementById("msg")
-let User;
+// export{selecting};
+// let dand_select=document.getElementById("dandelion");
+// let three_select=document.getElementById("threeleaf");
+// let cactus_select=document.getElementById("cactus");
+// let cotton_select=document.getElementById("cotton");
+// let msg=document.getElementById("msg")
+// let User;
 
 const firebaseConfig = {
   apiKey: "AIzaSyAUS-fQ46Gv4kuLEqvYurwQJ5inCRkLA1U",
@@ -23,16 +24,23 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-// const analytics = getAnalytics(app);
+// // const analytics = getAnalytics(app);
 const db=getFirestore(app);
-const auth = getAuth(app);
-const UID = window.sessionStorage.getItem("uid");
+// const auth = getAuth(app);
+// const UID = window.sessionStorage.getItem("uid");
 
-const docRef = doc(db,"seed","uqJAn7LFZCZKG7rtm3cMe5sRq3B3");//get user seed collection info
-const docSnap = await getDoc(docRef);
+// const docRef = doc(db,"seed","uqJAn7LFZCZKG7rtm3cMe5sRq3B3");//get user seed collection info
+// const docSnap = await getDoc(docRef);
 // let seeds=docSnap.data().Inventory;
 
-function selecting(){
+async function selecting(UID){
+  let dand_select=document.getElementById("dandelion");
+  let three_select=document.getElementById("threeleaf");
+  let cactus_select=document.getElementById("cactus");
+  let cotton_select=document.getElementById("cotton");
+  let msg=document.getElementById("msg")
+  const docRef = doc(db,"seed",UID);//get user seed collection info
+  const docSnap = await getDoc(docRef);
   const map1=docSnap.data().Inventory;
   
   for (const [key, value] of Object.entries(map1)) {
@@ -40,19 +48,19 @@ function selecting(){
     if (key=="Dandelion"){
       dand_select.style.display="block"
       
-  }
-  if (key=="Clover"){
-      three_select.style.display="block"
-   
-  }
-  if (key=="Cactus"){
-      cactus_select.style.display="block"
+    }
+    if (key=="Clover"){
+        three_select.style.display="block"
+    
+    }
+    if (key=="Cactus"){
+        cactus_select.style.display="block"
 
-  }
-  if (key=="Cotton"){
-      cotton_select.style.display="block"
+    }
+    if (key=="Cotton"){
+        cotton_select.style.display="block"
 
-  }
+    }
     
   }
 
@@ -69,6 +77,8 @@ function selecting(){
 //   for (let key of docSnap.data().Inventory.keys()){
   
 }
+
+export {selecting};
 
 
 
