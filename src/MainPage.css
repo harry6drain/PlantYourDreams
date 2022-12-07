@@ -20,6 +20,20 @@ body {
     color: #5D6943;
 
 }
+
+#dandelion{
+  display:none;
+}
+#threeleaf{
+  display:none;
+}
+#cactus{
+  display:none;
+}
+#cotton{
+  display:none;
+}
+
 #balancemsg{
   display:none;
   color: #5D6943;
