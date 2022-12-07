@@ -15,9 +15,10 @@ let seedshow=document.getElementById("seed");
 let nav=document.getElementsByClassName("nav__link")
 let grown=document.getElementById("grown");
 const timeH = document.querySelector("h1");
+let warningmsg=document.getElementById("warningmsg")
 var time;
-var input;
-
+let input;
+let bonus;
 let User;
 
 const firebaseConfig = {
@@ -75,7 +76,21 @@ function promptMe() {
     input = prompt("Enter the minutes you want to stay focused: ");
 }   
   time=input*60;
-  msg.innerHTML="Your Plant is Growing..."
+
+  if (input<30){
+    bonus=100
+  }
+  if(input>=30 && input<60){
+    bonus=200
+  }
+  if (input>=60){
+    bonus=400
+  }
+  if (input>=120){
+    bonus=1000
+  }
+  msg.style.display="none";
+  warningmsg.innerHTML="Going to Other Pages will Kill Your Plant <br/>Your Plant is Growing..."
   timer.style.display="block";
   btns.style.display="none";}
  
@@ -83,7 +98,7 @@ function promptMe() {
 
     // displayTime(input);
     updateCountdown()
-    if (time== 0 || time< 1) {
+    if (time== 0 ) {
       endCount();
       clearInterval(countDown);
     }
@@ -98,28 +113,29 @@ function promptMe() {
     seconds=seconds<10 ? "0" + seconds:seconds;
     timeH.innerHTML=`${minutes}:${seconds}`;
     time--;
-   for (var i = 0; i < nav.length; i++) {
-      nav[i].addEventListener('click',()=>{
+  //  for (var i = 0; i < nav.length; i++) {
+  //     nav[i].addEventListener('click',()=>{
+  //      var response=confirm("Are you sure to Kill your Plant?")
+  //      if (response===true){
+  //       return;
+  //      }
        
-       var response=confirm("Are you sure to Kill your Plant?")
-       if (response===true){
-        return;
-       }
-       
-        return;
-      }
-    )
+  //       return;
+  //     }
+  //   )
+  // }
   }
-  }
-
+ 
   async function endCount() {
     timeH.innerHTML = "Time out";
     msg.style.display="none"
     btnanother.style.display="block"
     seedshow.style.display="none"
     grown.style.display="block"
+    warningmsg.style.display="none"
     // AddDocument_AutoID();
     // Addseed();
+    balancemsg.innerHTML="You have earned "+bonus+" coins"
     balancemsg.style.display="block"
    
   
@@ -127,8 +143,9 @@ function promptMe() {
     const docRef_balance = doc(db, "users",UID);
     const docSnap_balance = await getDoc(docRef_balance);
     let curBal = docSnap_balance.data().balance;
+    
     updateDoc(docRef_balance, {
-      balance:curBal+500
+      balance:curBal+bonus
     });
 
     const docRef_seeds=doc(db,"seed",UID);
