@@ -98,7 +98,7 @@ function promptMe() {
 
     // displayTime(input);
     updateCountdown()
-    if (time== 0 ) {
+    if (time== 0 || time< 1) {
       endCount();
       clearInterval(countDown);
     }
