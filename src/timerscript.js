@@ -55,7 +55,7 @@ onAuthStateChanged(auth, (user) => {
 
 
 btns.addEventListener("click",()=>{
-  // console.log("starting,,,")
+
     if (User){
       promptMe();
     }
