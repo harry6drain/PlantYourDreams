@@ -4,8 +4,8 @@
 const style = {
   li: `flex justify-between bg-lime-600 p-4 my-2 rounded-2xl capitalize`,
   liComplete: `flex justify-between bg-slate-400 p-4 my-2 rounded-2xl capitalize`,
-  row: `flex`,
-  text: `ml-2 cursor-pointer`,
+  row: `flex  `,
+  text: `ml-2 cursor-pointer `,
   textComplete: `ml-2 line-through cursor-pointer`,
   button: `cursor-pointer flex items-center`,
 };
@@ -19,6 +19,9 @@ const Todo = ({ todo, toggleComplete, deleteTodo }) => {
   }, React.createElement("input", {
     onChange: () => toggleComplete(todo),
     type: "checkbox",
+    className: 'w-auto',
+
+    //one more question tho. If u see home, the logout works, but somehow on the garden and shop page, it doesn't work. And css isn't right, even though im using the same css code. It's in the Nav Bar
     checked: todo.completed ? 'checked' : ''
   }), React.createElement("p", {
     onClick: () => toggleComplete(todo),
