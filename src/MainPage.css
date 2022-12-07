@@ -97,8 +97,8 @@ body {
   position:relative;
   width: 233px;
   height: 64px;
-  left:5%;
-  top: 30%;
+  left:-30%;
+  top: 50%;
   color:white;
   font-size: 20px;
   background: #5D6943;

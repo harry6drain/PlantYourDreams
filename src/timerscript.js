@@ -125,9 +125,12 @@ function promptMe() {
     for (let [key, value] of Object.entries(map)) {
       
       if (key==selection){
-        // console.log(value)
+      
         value=value-1;
         map[key] = value
+        if (value === 0){
+          delete map[key];
+        }
         updateDoc(docRef_seeds, {
           Inventory:map
         });
