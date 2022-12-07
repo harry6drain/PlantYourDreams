@@ -32,6 +32,20 @@ body {
 #cotton{
   display:none;
 }
+
+#dandelion{
+  display:none;
+}
+#threeleaf{
+  display:none;
+}
+#cactus{
+  display:none;
+}
+#cotton{
+  display:none;
+}
+
 #balancemsg{
   display:none;
   color: #5D6943;
@@ -426,7 +440,7 @@ body {
     background-color: #bbb;
   }
 
-  .nav {
+  /* .nav {
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -452,9 +466,10 @@ body {
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
     transition: background-color 0.1s ease-in-out;
-}
+} */
 
-.nav__link:hover {
+
+/* .nav__link:hover {
     background-color: #eeeeee;
 }
 
@@ -464,4 +479,4 @@ body {
 
 .nav__icon {
     font-size: 18px;
-}
+} */

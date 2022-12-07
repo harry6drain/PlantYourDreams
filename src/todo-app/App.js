@@ -17,7 +17,7 @@ const style = {
   container: `bg-transparent content-center w-full rounded-md  shadow-xl p-4 leading-snug`,
   heading: `text-4xl font-bold text-center text-zinc-600 p-2`,
   form: `flex justify-between h-10`,
-  input: `border p-2 w-full text-lg`,
+  input: `border p-2 w-full `,
   button: `flex border p-4 ml-2 bg-[#7C8B5C] text-slate-100 rounded-full items-center`,
   count: `text-center p-2`,
 };

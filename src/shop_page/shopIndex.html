@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>Shop page</title>
   <link rel="stylesheet" href="./css/shopStyle.css">
+  <link rel="stylesheet" href="../nav.css" />
 
 </head>
 <body >
@@ -196,10 +197,14 @@
     <i class="material-icons nav__icon">person</i>
     <span class="nav__text">My Garden</span>
   </a>
-  <a href="shop-page/shopIndex.html" class="nav__link nav__link--active">
+  <a href="./shopIndex.html" class="nav__link nav__link--active">
     <i class="material-icons nav__icon">shopping_cart_checkout</i>
     <span class="nav__text">Shop</span>
   </a>
+  <button class="nav__link" id="logoutBtn">
+    <i class="material-icons nav__icon">logout</i>
+         <span class="nav__text">Logout</span>
+  </button>
   <!-- <a href="#" class="nav__link">
     <i class="material-icons nav__icon">diversity_3</i>
     <span class="nav__text">Friends</span>
@@ -211,8 +216,10 @@
 </nav>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
 <!-- partial -->
-  <script type="module" src="./js/shopScript.js"></script>
+<script type="module" src="../logout.js"></script>
+<script type="module" src="./js/shopScript.js"></script>
 
 </body>
 </html>
