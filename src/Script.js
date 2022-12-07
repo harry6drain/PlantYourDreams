@@ -36,12 +36,10 @@ for(let i=0; i<links.length; i++){
 }
 
 btnSelect.disabled=true;
+
 // import{promptMe} from "./timerscript.js"
 
-// btnstart.addEventListener("click",()=>{
-//     promptMe();
 
-// })
 
 let User;
 let UID;
@@ -104,22 +102,6 @@ seedselect.addEventListener("click",()=>{
     if (User){
         divselect.style.display="block";
         divclock.style.display="none";
-        // const map1=docSnap.data().Inventory;
-        // for (const [key, value] of Object.entries(map1)) {
-        //     console.log(key, value);
-        //     if (key=="Dandelion"){
-        //     dand_select.style.display="block"   
-        //     }
-        //     if (key=="Clover"){
-        //     three_select.style.display="block" 
-        //     }
-        //     if (key=="Cactus"){
-        //     cactus_select.style.display="block"
-        //     }
-        //     if (key=="Cotton"){
-        //     cotton_select.style.display="block"
-        //     } 
-        // }
         selecting(UID);
     }
 })
@@ -196,6 +178,7 @@ btnSelect.addEventListener("click",()=>{
         msg.innerHTML="Successfully Chose the Seed "
         btnstart.style.display="block";
         divselect.style.display="none";
+        
         
     }
     

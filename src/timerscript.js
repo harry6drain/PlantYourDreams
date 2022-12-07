@@ -7,11 +7,12 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebas
 import{ getFirestore , doc,updateDoc,arrayUnion,getDoc,setDoc} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 import {selection,timer} from "./Script.js";
 import {getAuth,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
-
+let seedselect=document.getElementById("pot")
 let btns=document.getElementById("start");
 let btnanother=document.getElementById("another")
 let msg=document.getElementById("msg");
 let seedshow=document.getElementById("seed");
+let nav=document.getElementsByClassName("nav__link")
 let grown=document.getElementById("grown");
 const timeH = document.querySelector("h1");
 var time;
@@ -58,12 +59,11 @@ btns.addEventListener("click",()=>{
 
     if (User){
       promptMe();
+      seedselect.style.pointerEvents="none"
+
     }
-    
   }
 )
-
-
 
 function promptMe() {
   input= prompt("Enter the minutes you want to stay focused: ");
@@ -91,11 +91,25 @@ function promptMe() {
   
 
   function updateCountdown(){
+  
+   
     const minutes=Math.floor(time/60)
     let seconds=time %60
     seconds=seconds<10 ? "0" + seconds:seconds;
     timeH.innerHTML=`${minutes}:${seconds}`;
     time--;
+   for (var i = 0; i < nav.length; i++) {
+      nav[i].addEventListener('click',()=>{
+       
+       var response=confirm("Are you sure to Kill your Plant?")
+       if (response===true){
+        return;
+       }
+       
+        return;
+      }
+    )
+  }
   }
 
   async function endCount() {
