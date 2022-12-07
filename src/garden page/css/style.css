@@ -1,13 +1,15 @@
 /*	Reset & General
 ---------------------------------------------------------------------- */
 
-* { margin: 0px; padding: 0px; }
+* { height:auto; margin: 0px; padding: 0px; }
 body {
 	font-family: "Open Sans", sans-serif; 
+	background:#7C8B5C;
 }
 #wrapper{
 	overflow: hidden;
-	height: 1153px;
+	/* height: 1153px; */
+	height:100%;
 	width: 100%;
 	background:#7C8B5C;
 }
@@ -39,10 +41,11 @@ body {
 	cursor:pointer;
 }
 #grid-selector{
-	height: 10px;
-	width: 1291px;
+	align-items: center;
+	height: auto;
+	width: auto;
 	padding: 40px 0px 40px 30px;
-	
+	float: right;
 	color: #5d5f68;
 	font-size: 14px;
 }
@@ -76,10 +79,10 @@ body {
  
 
 #grid{	
-	width: 1450px;
-	position: absolute;
+	width: 100%;
+	/* position: absolute; */
 	left: 150px;
-	height: 1600px;
+	height: 100%;
 	top: 180px;
 }
 

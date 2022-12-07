@@ -317,6 +317,7 @@ else{
 	var v = "The following was purchased";
 	document.getElementById("myText").innerHTML = v;
 
+	// update seed collections
 	let freqMap = {};
 	if (plantedExist){
 		const prevFreqMap = seedSnap.data().Inventory;
