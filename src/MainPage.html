@@ -12,86 +12,85 @@
   </head>
 
   <body style="background-color: #5d6943">
-    <!-- <div id = "wavesvg" style="background: url(./wave.svg)">
-      <img src="./wave.svg" /> -->
-      <div class="buttons">
-        <button id="buttonclock">Timer</button>
-        <button id="buttonToDo">My Tasks</button>
-        </div>
-          <div id="right">
-              <!-- partial:index.partial.html -->
-            <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
-              <div class="timer">
-                <h1 id="timer">00:00</h1>
-              </div>
-              <!-- partial -->
-              <img id = "pot" src="seed-select-image/pot.png">
-              <img id = "seed" src="seed-select-image/seed.png">
-              <img id = "grown" src="seed-select-image/Tulip.png">
-              <h2 id="warningmsg"></h2>
-              <h2 id="msg">Click pot to choose seed first</h2>
-              <h2 id="balancemsg">You have earned 500 coins!</h2>
-              <button id= "start" >Start Working</button>
-              <button id="another">Plant Another</button>
-          </div>
-
-    
-          <div id="left">
-              
-            </div>  
-          
-          <div id="selection">
-              <h2 id="select">Which flower do you want to plant?</h2>
-              <div class="flex justify-center">
-                <div>
-                  <img id = "tulip" src="seed-select-image/Tulip.png">
-                </div>
-                <div>
-                  <img id = "dandelion" src="seed-select-image/Dandelion.png">
-                </div>
-                <div>
-                  <img id = "threeleaf" src="seed-select-image/Three Leaf Clover.png">
-                </div>
-                <div>
-                  <img id = "cactus" src="seed-select-image/Cactus.png">
-                </div>
-                <div>
-                  <img id = "cotton" src="seed-select-image/Cotton.png">
-                </div>
-              </div>
-              <button id="buttonselect">select</button>
-          </div>
-
-
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-          <nav class="nav">
-            <a href="MainPage.html" class="nav__link nav__link--active">
-              <i class="material-icons nav__icon">dashboard</i>
-              <span class="nav__text">Home</span>
-            </a>
-            <a href="./garden page/index.html" class="nav__link ">
-              <i class="material-icons nav__icon">person</i>
-              <span class="nav__text">My Inventory</span>
-            </a>
-            <a href="shop_page/shopIndex.html" class="nav__link">
-              <i class="material-icons nav__icon">shopping_cart_checkout</i>
-              <span class="nav__text">Shop</span>
-            </a>
-            <button class="nav__link" id="logoutBtn">
-              <i class="material-icons nav__icon">logout</i>
-                  <span class="nav__text">Logout</span>
-            </button>
-            <!-- <a href="#" class="nav__link">
-              <i class="material-icons nav__icon">diversity_3</i>
-              <span class="nav__text">Friends</span>
-            </a> -->
-        <!-- <a href="#" class="nav__link">
-              <i class="material-icons nav__icon">settings</i>
-              <span class="nav__text">Settings</span>
-            </a> -->
-      </nav>
-
+    <div id="wavesvg" style="background: url(./waveAnimation.svg)">
     </div>
+    <img src="waveAnimation.svg" class="absolute top-0 left-0 w-full h-full object-cover z-[-1]"/>
+
+    <div class="buttons">
+      <button id="buttonclock">Timer</button>
+      <button id="buttonToDo">My Tasks</button>
+    </div>
+    <div id="right">
+      <!-- partial:index.partial.html -->
+      <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+      <div class="timer">
+        <h1 id="timer">00:00</h1>
+      </div>
+      <!-- partial -->
+      <img id="pot" src="seed-select-image/pot.png" />
+      <img id="seed" src="seed-select-image/seed.png" />
+      <img id="grown" src="seed-select-image/Tulip.png" />
+      <h2 id="warningmsg"></h2>
+      <h2 id="msg">Click pot to choose seed first</h2>
+      <h2 id="balancemsg">You have earned 500 coins!</h2>
+      <button id="start">Start Working</button>
+      <button id="another">Plant Another</button>
+    </div>
+
+    <div id="left"></div>
+
+    <div id="selection">
+      <h2 id="select">Which flower do you want to plant?</h2>
+      <div class="flex justify-center">
+        <div>
+          <img id="tulip" src="seed-select-image/Tulip.png" />
+        </div>
+        <div>
+          <img id="dandelion" src="seed-select-image/Dandelion.png" />
+        </div>
+        <div>
+          <img id="threeleaf" src="seed-select-image/Three Leaf Clover.png" />
+        </div>
+        <div>
+          <img id="cactus" src="seed-select-image/Cactus.png" />
+        </div>
+        <div>
+          <img id="cotton" src="seed-select-image/Cotton.png" />
+        </div>
+      </div>
+      <button id="buttonselect">select</button>
+    </div>
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <nav class="nav">
+      <a href="MainPage.html" class="nav__link nav__link--active">
+        <i class="material-icons nav__icon">dashboard</i>
+        <span class="nav__text">Home</span>
+      </a>
+      <a href="./garden page/index.html" class="nav__link">
+        <i class="material-icons nav__icon">person</i>
+        <span class="nav__text">My Inventory</span>
+      </a>
+      <a href="shop_page/shopIndex.html" class="nav__link">
+        <i class="material-icons nav__icon">shopping_cart_checkout</i>
+        <span class="nav__text">Shop</span>
+      </a>
+      <button class="nav__link" id="logoutBtn">
+        <i class="material-icons nav__icon">logout</i>
+        <span class="nav__text">Logout</span>
+      </button>
+      <!-- <a href="#" class="nav__link">
+            <i class="material-icons nav__icon">diversity_3</i>
+            <span class="nav__text">Friends</span>
+          </a> -->
+      <!-- <a href="#" class="nav__link">
+            <i class="material-icons nav__icon">settings</i>
+            <span class="nav__text">Settings</span>
+          </a> -->
+    </nav>
 
     <script
       crossorigin
@@ -101,6 +100,7 @@
       crossorigin
       src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
     ></script>
+    </div>
 
     <script type="module" src="Script.js"></script>
     <script type="module" src="logout.js"></script>
