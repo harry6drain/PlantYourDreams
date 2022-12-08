@@ -1,5 +1,6 @@
-import { auth } from "./firebase.js"
+import { auth,db } from "./firebase.js"
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js"
+import {doc, getDoc} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 let btnToDo=document.getElementById('buttonToDo');
 let btnclock=document.getElementById('buttonclock');
@@ -20,7 +21,11 @@ let btnstart=document.getElementById("start");
 let btnanother=document.getElementById("another");
 let grown=document.getElementById("grown");
 let selection;
+// export{selection};
 let links = document.querySelectorAll('.nav-link');
+import {selecting} from "./seedselect.js"
+
+
 
 for(let i=0; i<links.length; i++){
   links[i].addEventListener('click', function() {
@@ -31,14 +36,13 @@ for(let i=0; i<links.length; i++){
 }
 
 btnSelect.disabled=true;
+
 // import{promptMe} from "./timerscript.js"
 
-// btnstart.addEventListener("click",()=>{
-//     promptMe();
 
-// })
 
 let User;
+let UID;
 onAuthStateChanged(auth, (user) => {
     if (user) {
       // User is signed in, see docs for a list of available properties
@@ -47,6 +51,7 @@ onAuthStateChanged(auth, (user) => {
       const uid = User.uid;
       console.log(uid);
       window.sessionStorage.setItem("uid",uid)
+      UID = uid;
       // ...
     } else {
       // User is signed out
@@ -89,11 +94,16 @@ btnToDo.addEventListener("click",()=>{
     }
     
 })
+// const UID = window.sessionStorage.getItem("uid");
+// const docRef = doc(db,"seed",UID);//get user seed collection info
+// const docSnap = await getDoc(docRef);
 
 seedselect.addEventListener("click",()=>{
-    if (User)
+    if (User){
         divselect.style.display="block";
         divclock.style.display="none";
+        selecting(UID);
+    }
 })
 
 tulip_select.addEventListener("click",()=>{
@@ -103,7 +113,7 @@ tulip_select.addEventListener("click",()=>{
         three_select.style.border=""
         cactus_select.style.border=""
         cotton_select.style.border=""
-        selection="tulip"
+        // selection="tulip"
         btnSelect.disabled=false;
     }
     
@@ -116,7 +126,7 @@ dand_select.addEventListener("click",()=>{
         three_select.style.border=""
         cactus_select.style.border=""
         cotton_select.style.border=""
-        selection="dandelion"
+        selection="Dandelion"
         btnSelect.disabled=false;
     }
     
@@ -129,7 +139,7 @@ three_select.addEventListener("click",()=>{
         tulip_select.style.border=""
         cactus_select.style.border=""
         cotton_select.style.border=""
-        selection="three leaf"
+        selection="Clover"
         btnSelect.disabled=false;
     }
     
@@ -142,7 +152,7 @@ cactus_select.addEventListener("click",()=>{
         three_select.style.border=""
         tulip_select.style.border=""
         cotton_select.style.border=""
-        selection="cactus"
+        selection="Cactus"
         btnSelect.disabled=false;
     }
     
@@ -154,7 +164,7 @@ cotton_select.addEventListener("click",()=>{
         three_select.style.border=""
         cactus_select.style.border=""
         tulip_select.style.border=""
-        selection="cotton"
+        selection="Cotton"
         btnSelect.disabled=false;
     }
     
@@ -168,6 +178,8 @@ btnSelect.addEventListener("click",()=>{
         msg.innerHTML="Successfully Chose the Seed "
         btnstart.style.display="block";
         divselect.style.display="none";
+        
+        
     }
     
 

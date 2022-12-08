@@ -227,7 +227,8 @@ $(document).ready(function(){
 
 			var cartItem = "<div class='cart-item'><div class='img-wrap'><img src='"+productImage+"' alt='' /></div><span>"+productName+"</span><strong>$500</strong><div class='cart-item-border'></div><div class='delete-item'></div></div>";			
 
-			$("#cart .empty").hide();			
+			$("#cart .empty").hide();
+			//Add item display to cart (delete all cartItem if we want to clear cart)	
 			$("#cart").append(cartItem);
 			cartPlants.push(productName);
 			numOfItems += 1
@@ -261,25 +262,25 @@ $(document).ready(function(){
 
 //check out function
 
-$('.check_out').click(function(){
-	var productCard = $(this).parent();
-		var position = productCard.offset();
-		var productImage = $(productCard).find('img').get(0).src;
-		var productName = $(productCard).find('.product_name').get(0).innerHTML;	
+// $('.check_out').click(function(){
+// 	var productCard = $(this).parent();
+// 		var position = productCard.offset();
+// 		var productImage = $(productCard).find('img').get(0).src;
+// 		var productName = $(productCard).find('.product_name').get(0).innerHTML;	
 		
-		$("body").append('<div class="floating-cart"></div>');		
-		var cart = $('div.floating-cart');		
-		productCard.clone().appendTo(cart);
+// 		$("body").append('<div class="floating-cart"></div>');		
+// 		var cart = $('div.floating-cart');		
+// 		productCard.clone().appendTo(cart);
 
-		var cartItem = "<div class='cart-item'><div class='img-wrap'><img src='"+productImage+"' alt='' /></div><span>"+productName+"</span><strong>$500</strong><div class='cart-item-border'></div><div class='delete-item'></div></div>";			
+// 		var cartItem = "<div class='cart-item'><div class='img-wrap'><img src='"+productImage+"' alt='' /></div><span>"+productName+"</span><strong>$500</strong><div class='cart-item-border'></div><div class='delete-item'></div></div>";			
 
-			$("#cart .empty").hide();			
-			$("#cart").append(cartItem);
-			$("#checkout").fadeIn(500);
+// 			$("#cart .empty").hide();			
+// 			$("#cart").append(cartItem);
+// 			$("#checkout").fadeIn(500);
 
 
 
-});
+// });
 });
 
 
@@ -301,7 +302,10 @@ const plantedExist = seedSnap.exists();
 // TODO: Need to clear the cart after checkout
 async function checkOut() {
 if (curBal<500*numOfItems){
+	$("#myText").fadeIn();
 	document.getElementById("myText").innerHTML = "Not enough balance";
+	$("#myText").fadeOut(1500);
+	
 }
 else{
 	console.log(numOfItems);
@@ -310,13 +314,16 @@ else{
 	updateDoc(userRef, {
 		balance:curBal
 	});
-	document.getElementById("checkout").innerHTML = "Purchased!";
+	// document.getElementById("checkout").innerHTML = "Purchased!";
 	document.getElementById("balance").innerHTML = curBal;
 	// document.getElementById("balance").innerHTML = balance;
-	
+	$("#myText").fadeIn();
+
 	var v = "The following was purchased";
 	document.getElementById("myText").innerHTML = v;
+	$("#myText").fadeOut(1500);
 
+	// update seed collections
 	let freqMap = {};
 	if (plantedExist){
 		const prevFreqMap = seedSnap.data().Inventory;
@@ -339,6 +346,13 @@ else{
 	// empty the cart and counter
 	numOfItems = 0
 	cartPlants = [];
+
+	$('#cart div.cart-item').fadeOut(function(){
+		$(this).remove();
+		$("#cart .empty").fadeIn(1000);
+		$("#checkout").fadeOut(1000);
+		
+	});
 }
 // document.location.reload(true);
 }

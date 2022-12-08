@@ -1,9 +1,52 @@
 import { db } from "../../firebase.js";
+import { doc,getDoc } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js";
+
 const UID = window.sessionStorage.getItem("uid")
+const docRef = doc(db, "seed",UID);
+const docSnap = await getDoc(docRef);
+
+// Get all seeds in inventory field (remember to deal with non-exist)
+// if (docSnap.exists() && docSnap.data().Inventory!=null){
+// /
+const invtSeeds = docSnap.data().Inventory;
+// console.log(typeof invtSeeds);
+for (const plant in invtSeeds){
+	$("#grid").append(`<div class="product">
+	<div class="info-large">
+		
+		<h4>${plant}</h4>
+						   
+					 
+	</div>
+	<div class="make3D">
+		<div class="product-front">
+			<div class="shadow"></div>
+			<img src="images/${plant}.jpg" alt="" />
+			<div class="image_overlay"></div>
+					
+			<div class="stats">        	
+				<div class="stats-container">
+				   
+					<span class="product_name">${plant} <br> Qty: ${invtSeeds[plant]} </span>
+					
+					<div class="product-options">
+			
+				</div>                       
+				</div>                         
+			</div>
+		</div>
+		
+		
+	</div>	
+	</div>`);
+}
+
+	
+
 
 
 $(document).ready(function(){
-	document.body.style.zoom="90%"
+	// document.body.style.zoom="90%"
 	$(".largeGrid").click(function(){											
     $(this).find('a').addClass('active');
     $('.smallGrid a').removeClass('active');
@@ -109,5 +152,5 @@ $(document).ready(function(){
 	
 });
 
-const docRef = doc(db, "seed",UID);
-const docSnap = await getDoc(docRef);
+
+

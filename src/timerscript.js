@@ -7,16 +7,18 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebas
 import{ getFirestore , doc,updateDoc,arrayUnion,getDoc,setDoc} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 import {selection,timer} from "./Script.js";
 import {getAuth,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
-
+let seedselect=document.getElementById("pot")
 let btns=document.getElementById("start");
 let btnanother=document.getElementById("another")
 let msg=document.getElementById("msg");
 let seedshow=document.getElementById("seed");
+let nav=document.getElementsByClassName("nav__link")
 let grown=document.getElementById("grown");
 const timeH = document.querySelector("h1");
+let warningmsg=document.getElementById("warningmsg")
 var time;
-var input;
-
+let input;
+let bonus;
 let User;
 
 const firebaseConfig = {
@@ -55,14 +57,14 @@ onAuthStateChanged(auth, (user) => {
 
 
 btns.addEventListener("click",()=>{
+
     if (User){
       promptMe();
+      seedselect.style.pointerEvents="none"
+
     }
-    
   }
 )
-
-
 
 function promptMe() {
   input= prompt("Enter the minutes you want to stay focused: ");
@@ -74,7 +76,21 @@ function promptMe() {
     input = prompt("Enter the minutes you want to stay focused: ");
 }   
   time=input*60;
-  msg.innerHTML="Your Plant is Growing..."
+
+  if (input<30){
+    bonus=100
+  }
+  if(input>=30 && input<60){
+    bonus=200
+  }
+  if (input>=60){
+    bonus=400
+  }
+  if (input>=120){
+    bonus=1000
+  }
+  msg.style.display="none";
+  warningmsg.innerHTML="Going to Garden or Shop will Kill Your Plant <br/>Your Plant is Growing..."
   timer.style.display="block";
   btns.style.display="none";}
  
@@ -90,44 +106,71 @@ function promptMe() {
   
 
   function updateCountdown(){
+  
+   
     const minutes=Math.floor(time/60)
     let seconds=time %60
     seconds=seconds<10 ? "0" + seconds:seconds;
     timeH.innerHTML=`${minutes}:${seconds}`;
     time--;
+  //  for (var i = 0; i < nav.length; i++) {
+  //     nav[i].addEventListener('click',()=>{
+  //      var response=confirm("Are you sure to Kill your Plant?")
+  //      if (response===true){
+  //       return;
+  //      }
+       
+  //       return;
+  //     }
+  //   )
+  // }
   }
-
+ 
   async function endCount() {
     timeH.innerHTML = "Time out";
     msg.style.display="none"
     btnanother.style.display="block"
     seedshow.style.display="none"
     grown.style.display="block"
+    warningmsg.style.display="none"
     // AddDocument_AutoID();
     // Addseed();
+    balancemsg.innerHTML="You have earned "+bonus+" coins"
     balancemsg.style.display="block"
-    const docRef = doc(db,"seed",User.uid);
-    const docSnap = await getDoc(docRef);
-    if (docSnap.exists()){
-      await updateDoc(docRef, {
-        planted: arrayUnion(selection)
-      });
-    }
-    else{
-      const plants = new Array();
-      plants.push(selection);
-      await setDoc(docRef, {
-        planted: plants
-      });
-    }
+   
   
     const UID = window.sessionStorage.getItem("uid")
     const docRef_balance = doc(db, "users",UID);
     const docSnap_balance = await getDoc(docRef_balance);
     let curBal = docSnap_balance.data().balance;
+    
     updateDoc(docRef_balance, {
-      balance:curBal+500
+      balance:curBal+bonus
     });
+
+    const docRef_seeds=doc(db,"seed",UID);
+    const docSnap_seeds=await getDoc(docRef_seeds);
+    console.log(docSnap_seeds.data().Inventory);
+    const map=docSnap_seeds.data().Inventory; //map
+    
+    for (let [key, value] of Object.entries(map)) {
+      
+      if (key==selection){
+      
+        value=value-1;
+        map[key] = value
+        if (value === 0){
+          delete map[key];
+        }  
+        updateDoc(docRef_seeds, {
+          Inventory:map
+        });
+        
+        
+      }
+      
+    }
+    
     
   }
   

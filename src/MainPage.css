@@ -18,7 +18,19 @@ body {
     font-weight: 800;
     font-size: 30px;
     color: #5D6943;
+}
 
+#dandelion{
+  display:none;
+}
+#threeleaf{
+  display:none;
+}
+#cactus{
+  display:none;
+}
+#cotton{
+  display:none;
 }
 
 #dandelion{
@@ -96,11 +108,11 @@ body {
 /*style the select button*/
 #buttonselect{
   justify-content: center;
-  position:flex;
+  position:absolute;
   width: 233px;
   height: 64px;
-  left: 50%;
-  top: 80%;
+  left:43%;
+  top:60%;
   color:white;
   font-size: 20px;
   background: #5D6943;
@@ -140,14 +152,14 @@ body {
   height:80px;
   left: 43%; 
   top: 30%; 
-  
+  pointer-events: all;
 }
 #seed{
   display:none;
   position: relative;
   width: 49px;
   height: 70px;
-  left: 48.5%; 
+  left: 48.87%; 
   top: 10%; 
 }
 #grown{
@@ -165,12 +177,25 @@ body {
   position: relative;
   height: 66px;
   left: 300px;
-  top: 50%;
+  top: 45%;
   left:36%;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
   font-size: 20px;
+}
+#warningmsg{
+  color: #5D6943;
+  position: relative;
+  text-align: center;
+  height: 66px;
+  left: 300px;
+  top: 35%;
+  left:3%;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 23px;
 }
 #todo{
     font-family: 'El Messiri';
