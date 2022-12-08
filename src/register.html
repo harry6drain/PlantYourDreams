@@ -9,21 +9,26 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="login">
-      <h2>Register</h2>
-      <h3>Create an Account</h3>
+    <div style="background: url(./wave.svg)">
+      <img src="./wave.svg" />
+      <div class="login">
+        <h2>Register</h2>
+        <h3>Create an Account</h3>
 
-      <div class="login-form">
-        <div class="textbox">
-          <input type="email" placeholder="Email" id="email"/>
-          <span class="material-symbols-outlined"> account_circle </span>
+        <div class="login-form">
+          <div class="textbox">
+            <input type="email" placeholder="Email" id="email" />
+            <span class="material-symbols-outlined"> account_circle </span>
+          </div>
+          <div class="textbox">
+            <input type="password" placeholder="Password" id="psw" />
+            <span class="material-symbols-outlined"> lock </span>
+          </div>
+          <button type="button" id="registerBtn" name="registerBtn">
+            Register
+          </button>
+          <a href="./index.html">Already have an account?</a>
         </div>
-        <div class="textbox">
-          <input type="password" placeholder="Password" id="psw"/>
-          <span class="material-symbols-outlined"> lock </span>
-        </div>
-        <button type="button" id="registerBtn" name="registerBtn">Register</button>
-        <a href="./index.html">Already have an account?</a>
       </div>
     </div>
     <script type="module" src="./register.js"></script>
