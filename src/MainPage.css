@@ -248,7 +248,7 @@ body {
 }
 #left {
   display: none;
-    z-index:2;
+    /* z-index:2; */
     align-items: center;
     justify-content: center;
     position: flex;
