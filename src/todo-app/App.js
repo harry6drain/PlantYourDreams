@@ -14,9 +14,10 @@ import {
 
 const style = {
   bg: `flex w-full p-4 bg-gtransparent`,
-  container: `bg-transparent content-center w-full rounded-md  shadow-xl p-4 leading-snug`,
+  container: `bg-transparent content-center w-full  rounded-md  shadow-xl p-4 leading-snug`,
   heading: `text-4xl font-bold text-center text-zinc-600 p-2`,
   form: `flex justify-between h-10`,
+  ul: `h-[40vh] overflow-auto`,
   input: `border p-2 w-full `,
   button: `flex border p-4 ml-2 bg-[#7C8B5C] text-slate-100 rounded-full items-center`,
   count: `text-center p-2`,
@@ -90,7 +91,7 @@ function App() {
     className: style.button
   }, React.createElement('i', {
     className: 'fa fa-plus'}, null
-    ))), React.createElement("ul", null, todos.map((todo, index) => React.createElement(Todo, {
+    ))), React.createElement("ul",{className:style.ul}, null, todos.map((todo, index) => React.createElement(Todo, {
     key: index,
     todo: todo,
     toggleComplete: toggleComplete,

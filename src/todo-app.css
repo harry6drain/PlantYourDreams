@@ -568,10 +568,6 @@ video {
   display: inline-block;
 }
 
-.inline {
-  display: inline;
-}
-
 .flex {
   display: flex;
 }
@@ -582,6 +578,10 @@ video {
 
 .h-10 {
   height: 2.5rem;
+}
+
+.h-\[40vh\] {
+  height: 40vh;
 }
 
 .w-full {
@@ -606,6 +606,10 @@ video {
 
 .justify-between {
   justify-content: space-between;
+}
+
+.overflow-auto {
+  overflow: auto;
 }
 
 .rounded-md {
