@@ -1,7 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-import{ getFirestore} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-import {getAuth,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
-import { db, app } from './firebase.js'
+import{ getFirestore, doc, getDoc} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+// import {getAuth,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
+// import { db } from "./firebase.js"
+// import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 
 // export{selecting};
 // let dand_select=document.getElementById("dandelion");
@@ -11,14 +12,25 @@ import { db, app } from './firebase.js'
 // let msg=document.getElementById("msg")
 // let User;
 
-// const analytics = getAnalytics(app);
-const auth = getAuth(app);
+const firebaseConfig = {
+  apiKey: "AIzaSyAUS-fQ46Gv4kuLEqvYurwQJ5inCRkLA1U",
+  authDomain: "plantyourdreams-8d08e.firebaseapp.com",
+  databaseURL: "https://plantyourdreams-8d08e-default-rtdb.firebaseio.com",
+  projectId: "plantyourdreams-8d08e",
+  storageBucket: "plantyourdreams-8d08e.appspot.com",
+  messagingSenderId: "63192119407",
+  appId: "1:63192119407:web:c15c2b763e51e7f786b59a",
+  measurementId: "G-XYRQCEW5L5"
+};
 
-const uid=window.sessionStorage.getItem("uid") //get user id from current session
+const app = initializeApp(firebaseConfig);
+// // const analytics = getAnalytics(app);
+const db=getFirestore(app);
+// const auth = getAuth(app);
+// const UID = window.sessionStorage.getItem("uid");
 
-
-const docRef = doc(db,"seed",uid);//get u ser seed collection info
-const docSnap = await getDoc(docRef);
+// const docRef = doc(db,"seed","uqJAn7LFZCZKG7rtm3cMe5sRq3B3");//get user seed collection info
+// const docSnap = await getDoc(docRef);
 // let seeds=docSnap.data().Inventory;
 
 async function selecting(UID){
