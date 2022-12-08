@@ -9,24 +9,28 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="login">
-      <h2>Login</h2>
-      <h3>Welcome back!</h3>
+    <div style="background:url(./wave.svg)">
+      <img src="./wave.svg">
+      <!-- <div class="wave"></div>
+      <div class="wave"></div> -->
+      <div class="login">
+        <h2>Login</h2>
+        <h3>Welcome back!</h3>
 
-      <div class="login-form">
-        <div class="textbox">
-          <input type="email" placeholder="Email" id="loginEmail"/>
-          <span class="material-symbols-outlined"> account_circle </span>
+        <div class="login-form">
+          <div class="textbox">
+            <input type="email" placeholder="Email" id="loginEmail" />
+            <span class="material-symbols-outlined"> account_circle </span>
+          </div>
+          <div class="textbox">
+            <input type="password" placeholder="Password" id="loginPsw" />
+            <span class="material-symbols-outlined"> lock </span>
+          </div>
+          <button type="button" id="loginBtn" name="loginBtn">LOGIN</button>
+          <a href="./register.html">Don't have an account?</a>
         </div>
-        <div class="textbox">
-          <input type="password" placeholder="Password" id="loginPsw"/>
-          <span class="material-symbols-outlined"> lock </span>
-        </div>
-        <button type="button" id="loginBtn" name="loginBtn">LOGIN</button>
-        <a href="./register.html">Don't have an account?</a>
       </div>
     </div>
-
     <script type="module" src="./login.js"></script>
   </body>
 </html>

@@ -4,14 +4,14 @@
 * { height:auto; margin: 0px; padding: 0px; }
 body {
 	font-family: "Open Sans", sans-serif; 
-	background:#7C8B5C;
+	background:#5D6943;
 }
 #wrapper{
 	overflow: hidden;
 	/* height: 1153px; */
 	height:100%;
 	width: 100%;
-	background:#7C8B5C;
+	background:#5D6943;
 }
 #header{
 	text-align: center;

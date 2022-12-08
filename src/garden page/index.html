@@ -1,28 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Shop page</title>
-  <link rel="stylesheet" href="../garden page/css/style.css">
-  <link rel="stylesheet" href="../nav.css" />
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Shop page</title>
+    <link rel="stylesheet" href="../garden page/css/style.css" />
+    <link rel="stylesheet" href="../nav.css" />
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-</head>
-<body>
-    
-<!-- partial:index.partial.html -->
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+    <div id="header" style="text-align: center">
+      <ul>
+        <center>
+          <li><a href="">MY INVENTORY</a></li>
+        </center>
+      </ul>
+    </div>
 
-<div id="header" style="text-align:center">	
-	<ul>
-        <center> <li><a href="">MY GARDEN</a></li> </center>
-
-    </ul>	
-</div>
-
-<div id="wrapper">
-
-<div id="grid">
-    <!-- <div class="product">
+    <div id="wrapper">
+      <div id="grid">
+        <!-- <div class="product">
     	<div class="info-large">
         	
             <h4>Dandelion</h4>
@@ -143,39 +145,35 @@
             
         </div>	
     </div> -->
-    
-    
-                         
-        
+      </div>
+    </div>
 
-</div>
-</div>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <nav class="nav">
+      <a href="../MainPage.html" class="nav__link">
+        <i class="material-icons nav__icon">dashboard</i>
+        <span class="nav__text">Home</span>
+      </a>
+      <a href="./index.html" class="nav__link nav__link--active">
+        <i class="material-icons nav__icon">person</i>
+        <span class="nav__text">My Inventory</span>
+      </a>
+      <a href="../shop_page/shopIndex.html" class="nav__link">
+        <i class="material-icons nav__icon">shopping_cart_checkout</i>
+        <span class="nav__text">Shop</span>
+      </a>
+      <button class="nav__link" id="logoutBtn">
+        <i class="material-icons nav__icon">logout</i>
+        <span class="nav__text">Logout</span>
+      </button>
+    </nav>
 
-    
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<nav class="nav">
-  <a href="../MainPage.html" class="nav__link">
-    <i class="material-icons nav__icon">dashboard</i>
-    <span class="nav__text">Home</span>
-  </a>
-  <a href="./index.html" class="nav__link nav__link--active">
-    <i class="material-icons nav__icon">person</i>
-    <span class="nav__text">My Garden</span>
-  </a>
-  <a href="../shop_page/shopIndex.html" class="nav__link ">
-    <i class="material-icons nav__icon">shopping_cart_checkout</i>
-    <span class="nav__text">Shop</span>
-  </a>
-  <button class="nav__link" id="logoutBtn">
-    <i class="material-icons nav__icon">logout</i>
-         <span class="nav__text">Logout</span>
-  </button>
-</nav>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script type="module" src="../logout.js"></script>
-<!-- partial -->
-  <script type="module" src="./js/gardenScript.js"></script>
-
-</body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="module" src="../logout.js"></script>
+    <!-- partial -->
+    <script type="module" src="./js/gardenScript.js"></script>
+  </body>
 </html>

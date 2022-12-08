@@ -1,6 +1,6 @@
 // import { AiOutlinePlus } from 'https://cdn.jsdelivr.net/npm/react-icons@4.6.0/ai/index.esm.js';
 import Todo from './Todo.js';
-import { db } from '../firebase.js'
+import { db, auth } from '../firebase.js'
 import {
   query,
   collection,
@@ -11,6 +11,7 @@ import {
   deleteDoc,
   where
 } from 'https://www.gstatic.com/firebasejs/9.13.0/firebase-firestore.js';
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js"
 
 const style = {
   bg: `flex w-full p-4 bg-gtransparent`,
@@ -23,11 +24,25 @@ const style = {
   count: `text-center p-2`,
 };
 
+function useUserId() {
+  const [userId, setUserId] = React.useState(null)
+
+  React.useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUserId(user.uid)
+      }
+    });
+  }, []);
+
+  return userId
+}
+
 function App() {
   const [todos, setTodos] = React.useState([]);
   const [input, setInput] = React.useState('');
-  const userUID = sessionStorage.getItem("uid");
-  console.log(userUID);
+  const userUID = useUserId();
+  console.log('xx', userUID);
 
   // Create todo
     //need to write uid as well
@@ -48,6 +63,7 @@ function App() {
   // Read todo from firebase
     //need to add uid filter
   React.useEffect(() => {
+    if (!userUID) return;
     const q = query(collection(db, 'todos'),where("uid","==", `${userUID}`));
     console.log(db);
     const unsubscribe = onSnapshot(q, (querySnapshot) => {
@@ -58,7 +74,7 @@ function App() {
       setTodos(todosArr);
     });
     return () => unsubscribe();
-  }, []);
+  }, [userUID]);
 
   // Update todo in firebase
   const toggleComplete = async (todo) => {
