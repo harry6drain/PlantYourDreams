@@ -127,6 +127,7 @@ function promptMe() {
   }
  
   async function endCount() {
+    grown_img();
     timeH.innerHTML = "Time out";
     msg.style.display="none"
     btnanother.style.display="block"
@@ -174,7 +175,19 @@ function promptMe() {
     
   }
   
- 
+ function grown_img(){
+  if (selection=="Cactus"){
+    document.getElementById("grown").src="seed-select-image/cactus_grown.png"}
+  if (selection=="Cotton"){
+    document.getElementById("grown").src="seed-select-image/Cotton.png"}
+  if (selection=="Clover"){
+    document.getElementById("grown").src="seed-select-image/clover_grown.png"}
+  if (selection=="Dandelion"){
+    document.getElementById("grown").src="seed-select-image/Dandelion.png"}
+    
+  
+
+ }
 
 
 
