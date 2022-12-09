@@ -68,17 +68,20 @@ btns.addEventListener("click",()=>{
 
 function promptMe() {
   input= prompt("Enter the minutes you want to stay focused: ");
-  if(input<=0){
-    alert("invalid time!")
+  console.log(input)
+  if (input === null){
+    // alert("Planting cancelled!");
+    return;
+  }
+  else if (input<=0 || input.length === 0){
+    alert("Invalid time!")
+    promptMe();
+  }
+  else if (isNaN(input)){
+    alert("Please enter a numeric value!");
     promptMe()
   }
-  if (input==null){
-    alert(' Cancel pressed')
-    promptMe()
-  }
-  while(input === "" || isNaN(input)){
-    input = prompt("Enter the minutes you want to stay focused: ");
-}   
+  else {
   time=input*60;
 
   if (input<30){
@@ -97,6 +100,7 @@ function promptMe() {
   warningmsg.innerHTML="Going to Garden or Shop will Kill Your Plant <br/>Your Plant is Growing..."
   timer.style.display="block";
   btns.style.display="none";
+  }
 }
  
  const countDown = setInterval(() => {
