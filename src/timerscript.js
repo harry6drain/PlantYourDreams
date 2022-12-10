@@ -68,7 +68,6 @@ btns.addEventListener("click",()=>{
 
 function promptMe() {
   input= prompt("Enter the minutes you want to stay focused: ");
-  console.log(input)
   if (input === null){
     // alert("Planting cancelled!");
     return;
@@ -82,6 +81,7 @@ function promptMe() {
     promptMe()
   }
   else {
+  
   time=input*60;
 
   if (input<30){
@@ -100,9 +100,8 @@ function promptMe() {
   warningmsg.innerHTML="Going to Garden or Shop will Kill Your Plant <br/>Your Plant is Growing..."
   timer.style.display="block";
   btns.style.display="none";
-  }
 }
- 
+}
  const countDown = setInterval(() => {
 
     // displayTime(input);
