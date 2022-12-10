@@ -68,7 +68,7 @@ btns.addEventListener("click",()=>{
 
 function promptMe() {
   input= prompt("Enter the minutes you want to stay focused: ");
-  if(input<=0){
+  if(input=0){
     alert("invalid time!")
     promptMe()
   }
@@ -96,8 +96,7 @@ function promptMe() {
   msg.style.display="none";
   warningmsg.innerHTML="Going to Garden or Shop will Kill Your Plant <br/>Your Plant is Growing..."
   timer.style.display="block";
-  btns.style.display="none";
-}
+  btns.style.display="none";}
  
  const countDown = setInterval(() => {
 
