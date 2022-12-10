@@ -68,15 +68,20 @@ btns.addEventListener("click",()=>{
 
 function promptMe() {
   input= prompt("Enter the minutes you want to stay focused: ");
-  if(input<=0){
-    alert("invalid time!")
-    promptMe()
+  if (input === null){
+    // alert("Planting cancelled!");
+    return;
+  }
+  else if (input<=0 || input.length === 0){
+    alert("Invalid time!")
+    promptMe();
   }
   else if (isNaN(input)){
     alert("Please enter a numeric value!");
     promptMe()
   }
   else {
+  
   time=input*60;
 
   if (input<30){
@@ -96,7 +101,7 @@ function promptMe() {
   timer.style.display="block";
   btns.style.display="none";
 }
- 
+}
  const countDown = setInterval(() => {
 
     // displayTime(input);
