@@ -57,7 +57,7 @@ onAuthStateChanged(auth, (user) => {
       // User is signed out
       // ...
       User = null;
-      console.log("Uh-oh");
+      Alert("Please Sign-in!")
       window.location.replace("./index.html")
     }
 });
