@@ -49,7 +49,6 @@ onAuthStateChanged(auth, (user) => {
   } else {
     // User is signed out
     // ...
-    alert("User logged out!")
     window.location.assign("./index.html")
   }
 });
