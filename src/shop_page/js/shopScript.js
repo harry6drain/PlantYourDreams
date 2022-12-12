@@ -318,7 +318,7 @@ else{
 	document.getElementById("balance").innerHTML = curBal;
 	// document.getElementById("balance").innerHTML = balance;
 	$("#myText").fadeIn();
-	
+	$("#checkout").fadeOut(1000);
 
 	var v = "The following was purchased";
 	document.getElementById("myText").innerHTML = v;
@@ -361,7 +361,7 @@ else{
 	$('#cart div.cart-item').fadeOut(function(){
 		$(this).remove();
 		$("#cart .empty").fadeIn(1000);
-		$("#checkout").fadeOut(1000);
+		
 		
 	});
 }
