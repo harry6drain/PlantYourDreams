@@ -830,11 +830,15 @@ body.MakeFloatingCart div.cart-icon-bottom{z-index:300;}
 #info p{font-size:15px; padding:3px;color:#b1b1b3}
 #info a{text-decoration:none;} 
 #checkout{
+	width: 72px;
+	height: 20px;
+	position: relative;
+	position: relative;
 	border: 2px solid rgba(50, 61, 26, 0.66);
 	font-size: 13px;
 	font-weight: 700;
 	padding: 3px 9px;
-	position: absolute;
+	position: relative;
 	top: 137px;
 	left: 181px;
 	color: rgba(50, 61, 26, 0.66);
