@@ -832,10 +832,6 @@ body.MakeFloatingCart div.cart-icon-bottom{z-index:300;}
 #info a{text-decoration:none;} 
 
 #checkout{
-	width: 72px;
-	height: 20px;
-	position: relative;
-	position: relative;
 	border: 2px solid rgba(50, 61, 26, 0.66);
 	font-size: 13px;
 	font-weight: 700;
@@ -844,7 +840,7 @@ body.MakeFloatingCart div.cart-icon-bottom{z-index:300;}
 	width: 72px;
 	height: 20px;
 	top: 230px;
-	left: 10%;
+	left: 100px;
 	z-index:1;
 	color: rgba(50, 61, 26, 0.66);
 	display:none;
