@@ -318,6 +318,7 @@ else{
 	document.getElementById("balance").innerHTML = curBal;
 	// document.getElementById("balance").innerHTML = balance;
 	$("#myText").fadeIn();
+	
 
 	var v = "The following was purchased";
 	document.getElementById("myText").innerHTML = v;
