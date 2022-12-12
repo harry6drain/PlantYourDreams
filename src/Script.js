@@ -57,7 +57,7 @@ onAuthStateChanged(auth, (user) => {
       // User is signed out
       // ...
       User = null;
-      console.log("Uh-oh");
+      Alert("Please Sign-in!")
       window.location.replace("./index.html")
     }
 });
@@ -70,9 +70,9 @@ btnanother.addEventListener("click",()=>{
 
 btnclock.addEventListener("click",()=>{
     if (User){
-        btnclock.style.backgroundColor = 'white';
-        btnclock.style.color="#5D6943";
-        btnToDo.style.backgroundColor = '#5D6943';
+        btnclock.style.backgroundColor = '#fff' ;
+        btnclock.style.color="#5d6943";
+        btnToDo.style.backgroundColor = 'transparent';
         btnToDo.style.color='white';
         left.style.display="none"
         right.style.display="block"
@@ -84,10 +84,10 @@ btnclock.addEventListener("click",()=>{
 
 btnToDo.addEventListener("click",()=>{
     if (User){
-        btnToDo.style.backgroundColor = 'white';
-        btnToDo.style.color="#5D6943";
-        btnclock.style.backgroundColor = '#5D6943';
-        btnclock.style.color='white';
+        btnToDo.style.backgroundColor = '#fff';
+        btnToDo.style.color="#5d6943";
+        btnclock.style.backgroundColor = 'transparent';
+        btnclock.style.color='#fff';
         right.style.display="none"
         left.style.display="flex"
         divselect.style.display="none"

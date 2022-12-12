@@ -49,7 +49,6 @@ onAuthStateChanged(auth, (user) => {
   } else {
     // User is signed out
     // ...
-    alert("User logged out!")
     window.location.assign("./index.html")
   }
 });
@@ -68,13 +67,20 @@ btns.addEventListener("click",()=>{
 
 function promptMe() {
   input= prompt("Enter the minutes you want to stay focused: ");
-  if (input==null){
-    alert(' Cancel pressed')
+  if (input === null){
+    // alert("Planting cancelled!");
+    return;
+  }
+  else if (input<=0 || input.length === 0){
+    alert("Invalid time!")
+    promptMe();
+  }
+  else if (isNaN(input)){
+    alert("Please enter a numeric value!");
     promptMe()
   }
-  while(input === "" || isNaN(input)){
-    input = prompt("Enter the minutes you want to stay focused: ");
-}   
+  else {
+  
   time=input*60;
 
   if (input<30){
@@ -92,8 +98,9 @@ function promptMe() {
   msg.style.display="none";
   warningmsg.innerHTML="Going to Garden or Shop will Kill Your Plant <br/>Your Plant is Growing..."
   timer.style.display="block";
-  btns.style.display="none";}
- 
+  btns.style.display="none";
+}
+}
  const countDown = setInterval(() => {
 
     // displayTime(input);
@@ -127,6 +134,7 @@ function promptMe() {
   }
  
   async function endCount() {
+    grown_img();
     timeH.innerHTML = "Time out";
     msg.style.display="none"
     btnanother.style.display="block"
@@ -174,7 +182,19 @@ function promptMe() {
     
   }
   
- 
+ function grown_img(){
+  if (selection=="Cactus"){
+    document.getElementById("grown").src="seed-select-image/cactus_grown.png"}
+  if (selection=="Cotton"){
+    document.getElementById("grown").src="seed-select-image/Cotton.png"}
+  if (selection=="Clover"){
+    document.getElementById("grown").src="seed-select-image/clover_grown.png"}
+  if (selection=="Dandelion"){
+    document.getElementById("grown").src="seed-select-image/Dandelion.png"}
+    
+  
+
+ }
 
 
 
