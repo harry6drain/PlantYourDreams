@@ -113,7 +113,7 @@ tulip_select.addEventListener("click",()=>{
         three_select.style.border=""
         cactus_select.style.border=""
         cotton_select.style.border=""
-        // selection="tulip"
+        selection="Tulip"
         btnSelect.disabled=false;
     }
     

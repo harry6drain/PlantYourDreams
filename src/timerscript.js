@@ -158,29 +158,78 @@ function promptMe() {
 
     const docRef_seeds=doc(db,"seed",UID);
     const docSnap_seeds=await getDoc(docRef_seeds);
-    console.log(docSnap_seeds.data().Inventory);
-    const map=docSnap_seeds.data().Inventory; //map
+    const seedExist = docSnap_seeds.exists();
     
-    for (let [key, value] of Object.entries(map)) {
+
+    // if document exists, check if inventory exists; if invty not exist, create inventory
+    let map ={}
+    if (seedExist){
+      if (docSnap_seeds.data().Inventory){
+        map = docSnap_seeds.data().Inventory
+      }
+    }
+
+    // const map=docSnap_seeds.data().Inventory; //map
+   
+    for (let [key, value] of Object.entries(map)) { 
       
       if (key==selection){
-      
         value=value-1;
         map[key] = value
         if (value === 0){
           delete map[key];
         }  
-        updateDoc(docRef_seeds, {
-          Inventory:map
-        });
+        if (seedExist){
+          await updateDoc(docRef_seeds, {
+            Inventory:map,
+          });
+        }
+        else{
+          await setDoc(docRef_seeds, {
+            Inventory:map,
+          });
+        }
         
-        
+      } 
+    }
+
+    var map_planted = {};
+    if (seedExist){
+      if (docSnap_seeds.data().Planted){
+        map_planted = docSnap_seeds.data().Planted
       }
-      
+    }
+    // map_planted = docSnap_seeds.data().Planted; //create a new map
+    
+    
+    if (selection in map_planted){
+      map_planted[selection] += 1
+    }
+    else{
+      map_planted[selection] = 1
     }
     
-    
+    // var map_planted=new Map();
+    // map_planted=docSnap_seeds.data().Planted; //map
+    // console.log(map_planted);//{}
+    // console.log(map_planted.size);//undefined
+    // console.log(map_planted.has(selection))
+    // if (map_planted.exists()){
+      
+    if (seedExist){
+      await updateDoc(docRef_seeds, {
+        Planted:map_planted,
+      });
+    }
+    else{
+      await setDoc(docRef_seeds, {
+        Planted:map_planted,
+      });
+    }
   }
+  
+
+  
   
  function grown_img(){
   if (selection=="Cactus"){
