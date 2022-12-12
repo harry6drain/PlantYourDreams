@@ -41,6 +41,7 @@ async function selecting(UID){
   let msg=document.getElementById("msg")
   const docRef = doc(db,"seed",UID);//get user seed collection info
   const docSnap = await getDoc(docRef);
+  if (docSnap.exists()){
   const map1=docSnap.data().Inventory;
   
   for (const [key, value] of Object.entries(map1)) {
@@ -63,7 +64,7 @@ async function selecting(UID){
     }
     
   }
-
+}
 
   // for (const [key, value] of map1) {
   //   console.log(key, value); // 👉️ country Chile, age 30

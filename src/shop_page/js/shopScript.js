@@ -296,7 +296,7 @@ document.getElementById("balance").innerHTML = curBal;
 const seedRef = doc(db,"seed",UID);
 // Get user's current inventory of seeds
 const seedSnap = await getDoc(seedRef);
-// Check if the collection exists
+// Check if the document exists
 const plantedExist = seedSnap.exists();
 
 // TODO: Need to clear the cart after checkout
@@ -327,8 +327,10 @@ else{
 	// update seed collections
 	let freqMap = {};
 	if (plantedExist){
-		const prevFreqMap = seedSnap.data().Inventory;
-		freqMap = prevFreqMap
+		if (seedSnap.data().Inventory){
+			const prevFreqMap = seedSnap.data().Inventory;
+			freqMap = prevFreqMap
+		}
 	}
 
 	cartPlants.forEach((plant) => {
@@ -339,11 +341,19 @@ else{
 			freqMap[plant] = 1;
 		}
 	})
-	
-	await setDoc(seedRef, {
-		Inventory:freqMap
-	});
 
+	if (plantedExist){
+		await updateDoc(seedRef, {
+		  Inventory:freqMap,
+		});
+	  }
+	  else{
+		await setDoc(seedRef, {
+		  Inventory:freqMap,
+		});
+	  }
+
+}
 	// empty the cart and counter
 	numOfItems = 0
 	cartPlants = [];
@@ -356,5 +366,4 @@ else{
 	});
 }
 // document.location.reload(true);
-}
 
