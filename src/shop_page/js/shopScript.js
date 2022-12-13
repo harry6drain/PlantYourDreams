@@ -353,7 +353,7 @@ else{
 		});
 	  }
 
-}
+
 	// empty the cart and counter
 	numOfItems = 0
 	cartPlants = [];
@@ -364,6 +364,7 @@ else{
 		
 		
 	});
+}
 }
 // document.location.reload(true);
 
