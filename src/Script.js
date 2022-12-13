@@ -23,7 +23,7 @@ let grown=document.getElementById("grown");
 let selection;
 // export{selection};
 let links = document.querySelectorAll('.nav-link');
-import {selecting} from "./seedselect.js"
+import {selecting,seed_color} from "./seedselect.js"
 
 
 
@@ -174,6 +174,7 @@ btnSelect.addEventListener("click",()=>{
     if (User){
         right.style.zIndex=2;
         right.style.display="block";
+        seed_color();
         seedshow.style.display="block";
         msg.innerHTML="Successfully Chose the Seed "
         btnstart.style.display="block";

@@ -1,16 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import{ getFirestore, doc, getDoc} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
-// import {getAuth,onAuthStateChanged} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
-// import { db } from "./firebase.js"
-// import { doc, getDoc } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import{selection} from "../src/Script.js"
 
-// export{selecting};
-// let dand_select=document.getElementById("dandelion");
-// let three_select=document.getElementById("threeleaf");
-// let cactus_select=document.getElementById("cactus");
-// let cotton_select=document.getElementById("cotton");
-// let msg=document.getElementById("msg")
-// let User;
 
 const firebaseConfig = {
   apiKey: "AIzaSyAUS-fQ46Gv4kuLEqvYurwQJ5inCRkLA1U",
@@ -79,7 +70,28 @@ async function selecting(UID){
   
 }
 
-export {selecting};
+function seed_color(){
+  if (selection==="Tulip"){
+    document.getElementById("seed").src="seed-select-image/tulip_seed.png"
+  }
+  if (selection==="Cactus"){
+    document.getElementById("seed").src="seed-select-image/cactus_seed.png"
+  }
+  if (selection==="Dandelion"){
+    document.getElementById("seed").src="seed-select-image/dandelion_seed.png"
+  }
+  if (selection==="Clover"){
+    document.getElementById("seed").src="seed-select-image/clover_seed.png"
+  }
+  if (selection==="Cotton"){
+    document.getElementById("seed").src="seed-select-image/cotton-seed.png"
+  }
+
+
+}
+
+export {selecting, seed_color};
+
 
 
 
