@@ -96,7 +96,7 @@ function promptMe() {
     bonus=1000
   }
   msg.style.display="none";
-  warningmsg.innerHTML="Going to Garden or Shop will Kill Your Plant <br/>Your Plant is Growing..."
+  warningmsg.innerHTML="Going to Inventory, Garden, or Shop will Kill Your Plant <br/>Your Plant is Growing..."
   timer.style.display="block";
   btns.style.display="none";
 }
